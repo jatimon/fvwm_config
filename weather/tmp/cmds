@@ -1,0 +1,15 @@
+s/<pubDate>//
+s/<\/pubDate>//
+/<image>/,/<\/image>/ d
+s/<description>//
+s/<\/description>/:\n/
+s/&amp;nbsp;&amp;deg;//
+s/\&amp;nbsp;\&amp;deg;//
+s/\t//g
+
+
+
+
+
+
+

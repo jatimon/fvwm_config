@@ -1,0 +1,42 @@
+# 
+# Global Style Settings
+#
+#
+#       $Id: fvwm.style,v 1.3 2009/09/14 15:46:58 jtimon Exp $
+#
+# --------------------------------------------------------------------------------
+#
+# $Log: fvwm.style,v $
+# Revision 1.3  2009/09/14 15:46:58  jtimon
+# saving state
+#
+# Revision 1.2  2008/09/30 17:31:13  jtimon
+# cleaned up some unused style entries
+# added a destroystyle entry to make it easier to reload style info
+#
+# Revision 1.1  2008/09/26 17:32:48  jtimon
+# Initial revision
+#
+#
+# --------------------------------------------------------------------------------
+#
+
+
+DestroyStyle *
+Style "*"               BorderWidth 0, NoHandles,  NoPPosition, SmartPlacement, RandomPlacement,\
+		 	MWMFunctions, HintOverride, MWMDecor, MWMButtons, Colorset 0, HilightColorset 1 
+Style "*"		Button 1, Button 2, Button 3, Button 4, Button 6, Button 8 GrabFocusOff
+DestroyStyle "Fvwm*" "FvwmConsole" "Firefox" "*esktop" "FvwmBanner" "xcalc"
+Style "Fvwm*"           NoTitle, Sticky, WindowListSkip
+Style "FvwmConsole"     Title, Sticky, WindowListSkip, HandleWidth 3
+Style "Firefox"         Title, !Sticky
+Style "*esktop"         NoTitle, !Sticky, BorderWidth 1, HandleWidth 3 
+Style "FvwmBanner"      StaysOnTop
+Style "xcalc"           Icon xcalc.xpm, Colorset 7
+#Style "xlock"           NoTitle, NoHandles, Sticky, WindowListSkip
+#Style "xclock"          NoTitle, NoHandles, BorderWidth 0, Font 5x7
+#Style "xterm"           
+#Style "console"         Icon xterm.xpm, Color white/blue
+#Style "xload"           Sticky, WindowListSkip, NoTitle
+
+

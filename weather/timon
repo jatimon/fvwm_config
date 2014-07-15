@@ -1,0 +1,46 @@
+    <item>
+      <title>Current Weather</title>
+	  <guid>http://www.theweathernetwork.com/index.php?product=weather&amp;placecode=caon0523&amp;ref=current_obs</guid>
+	  <link>http://www.theweathernetwork.com/index.php?product=weather&amp;placecode=caon0523&amp;ref=current_obs</link>
+      <pubDate>Tue, 07 Oct 2008 09:00:00 EDT</pubDate>
+	  <image>
+		<url>http://rss.counter.weather.ca/counter.gif</url>
+		<title>spacer</title>
+		<link>http://www.theweathernetwork.com/index.php?product=weather&amp;placecode=caon0523&amp;ref=current_obs</link>
+		</image>
+      <description>A few clouds,
+	  
+		7&amp;nbsp;&amp;deg;C		, Humidity		76%		, Wind 
+		NE 9km/h		</description>
+	
+    </item>
+    <item>
+      <title>Wednesday, Oct 8, 2008</title>
+	    <guid>http://www.theweathernetwork.com/index.php?product=weather&amp;placecode=caon0523&amp;ref=day1#ltermfx</guid>
+	    <link>http://www.theweathernetwork.com/index.php?product=weather&amp;placecode=caon0523&amp;ref=day1#ltermfx</link>
+	  <pubDate>Tue, 07 Oct 2008 08:00:00 EDT</pubDate>
+      <description>
+		Rain,
+		High  18&amp;nbsp;&amp;deg;C, Low  6&amp;nbsp;&amp;deg;C, P.O.P.  90%	  
+	  </description>
+    </item>
+   <item>
+      <title>Thursday, Oct 9, 2008</title>
+	    <link>http://www.theweathernetwork.com/index.php?product=weather&amp;placecode=caon0523&amp;ref=day2#ltermfx</link>
+		 <guid>http://www.theweathernetwork.com/index.php?product=weather&amp;placecode=caon0523&amp;ref=day2#ltermfx</guid>
+	  <pubDate>Tue, 07 Oct 2008 08:00:00 EDT</pubDate>
+       <description>
+		Variable cloudiness,
+		High 20&amp;nbsp;&amp;deg;C, Low 16&amp;nbsp;&amp;deg;C, P.O.P. 30%	  
+	  </description>
+    </item>
+     <item>
+      <title>Friday, Oct 10, 2008</title>
+	    <link>http://www.theweathernetwork.com/index.php?product=weather&amp;placecode=caon0523&amp;ref=day3#ltermfx</link>
+		 <guid>http://www.theweathernetwork.com/index.php?product=weather&amp;placecode=caon0523&amp;ref=day3#ltermfx</guid>
+	  <pubDate>Tue, 07 Oct 2008 08:00:00 EDT</pubDate>
+      <description>
+		Sunny,
+		High 18&amp;nbsp;&amp;deg;C, Low 4&amp;nbsp;&amp;deg;C, P.O.P. 0%	  
+	  </description>
+    </item>

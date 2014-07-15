@@ -1,0 +1,60 @@
+#
+# Configuration for FvwmButtons
+#
+#	$Id: fvwm.buttons,v 1.3 2009/09/21 19:35:48 jtimon Exp $
+#
+# --------------------------------------------------------------------------------
+#
+# $Log: fvwm.buttons,v $
+# Revision 1.3  2009/09/21 19:35:48  jtimon
+# removing tool tips
+#
+# Revision 1.2  2009/09/14 15:46:23  jtimon
+# saving state
+#
+# Revision 1.1  2008/09/26 17:32:20  jtimon
+# Initial revision
+#
+#
+# --------------------------------------------------------------------------------
+#
+#
+Style "FvwmButtons"     NoTitle, NoHandles, Sticky, WindowListSkip, BorderWidth 0
+
+DestroyModuleConfig FvwmButtons: *
+*FvwmButtons: Colorset 15
+*FvwmButtons: ActiveColorset 16
+*FvwmButtons: Font -adobe-helvetica-*-r-*-*-10-*-*-*-*-*-*-*
+*FvwmButtons: Geometry +0+0x200x45
+#*FvwmButtons: UseTips
+#*FvwmButtons: TipsColorset 9
+#*FvwmButtons: TipsDelay 0
+*FvwmButtons: Rows 3
+*FvwmButtons: Columns 7
+*FvwmButtons: Padding 0 0
+*FvwmButtons: (2x2, Swallow(UseOld,SwallowNew) "wmclock" `Exec /usr/bin/wmclock -12 -led \\#fefe56`)
+*FvwmButtons: (1x1, Icon rbomb.xpm,  Action(Mouse 1) Destroy)
+#*FvwmButtons: (1x1, Icon crystalsvg/22x22/apps/knotes.png\
+        Action(Mouse 1) Exec "" /usr/local/bin/postit.pl)\
+        Action(Mouse 2) Exec "" xlock -mode random)
+*FvwmButtons: (1x1, Icon gnome/22x22/apps/web-browser.png,  Action(Mouse 1)  Exec ""  /usr/bin/firefox , Action(Mouse 2)  Exec ""  /usr/bin/google-chrome )
+*FvwmButtons: (1x1, Icon slick/22x22/filesystems/server.png\
+        Action(Mouse 1) "exec xterm  -sb -si -sk -sl 15000 -bg \#010101 -fg tan -cr HotPink -title 'tom03' -e /usr/bin/ssh -X -l jtimon tom03 ",\
+        Action(Mouse 2) "exec xterm  -sb -si -sk -sl 15000 -bg black -fg yellow -cr HotPink -title 'Imaging' -e /usr/bin/ssh -X -l jtimon pxe03.rim.net",\
+        Action(Mouse 3) "exec xterm  -sb -si -sk -sl 15000 -bg black -fg green -cr HotPink -title 'jump1001'  -e /usr/bin/ssh -X -l root jump1001.network.rim.net ")
+#*FvwmButtons: (1x1, Icon slick/22x22/filesystems/server.png,, TipsLabel "Left -- tom03, Middle -- Imaging, Right -- jump1001" \
+        #Action(Mouse 1) "exec xterm -ls -s -sl 15000 -j -aw -sb -bg black -fg white -cr HotPink -title 'tom03' -e /usr/bin/ssh -X -l jtimon tom03 ",\
+        #Action(Mouse 2) "exec xterm -ls -s -sl 15000 -j -aw -sb -bg black -fg yellow -cr HotPink -title 'Imaging' -e /usr/bin/ssh -X -l jtimon pxe03.rim.net",\
+        #Action(Mouse 3) "exec xterm -ls -s -sl 15000 -j -aw -sb -bg black -fg green -cr HotPink -title 'jump1001'  -e /usr/bin/ssh -X -l root jump1001.network.rim.net ")
+# Action(Mouse 1) "exec /usr/X11R6/bin/rdesktop -u jtimon -d rim.net -g 1680x1050 -b -K -a 24 -x l -C -r sound:remote -0 it0000000043214.rim.net ",
+*FvwmButtons: (1x1, Icon kids/22x22/apps/display.png\
+        Action(Mouse 1) "exec rdesktop -u jtimon -d rim.net -g 1680x1050 -E -K -a 24 -x b -z -0 ci0000001493729.rim.net",\
+        Action(Mouse 2) "exec  /usr/NX/bin/nxclient",\
+        Action(Mouse 3) "exec rdesktop  -b -K -a 24 -x l -C -u john -g 1280x1024 jtimon-xp")
+*FvwmButtons: (1x1, Icon Tango/22x22/apps/openterm.png\
+        Action(Mouse 1) "exec xterm   -sb -si -sk -sl 15000 -bg black -fg white -geometry 80x25 -title 'Xterm - John' ",\
+        Action(Mouse 2) "exec xterm   -sb -si -sk -sl 15000 -bg black -fg white -geometry 80x25 -title 'Xterm - Work' -e  /usr/bin/ssh -X jtimon@jtimon-lx ",\
+        Action(Mouse 3) "exec xterm   -sb -si -sk -sl 15000 -bg black -fg white -geometry 80x50 -title 'Xterm - John' ")
+*FvwmButtons: (5x1, Swallow(UseOld,SwallowNew,Kill, Respawn) "stalonetray" `Exec exec stalonetray `)
+*FvwmButtons: (7x1, Swallow(UseOld,SwallowNew)  FvwmPager 'Module FvwmPager')
+

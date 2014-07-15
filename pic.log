@@ -1,0 +1,4 @@
+command /usr/bin/Esetroot -scale /home/jtimon/back/coloroncall.jpg
+env display var :2.0
+passed display var 
+passed params 

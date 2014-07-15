@@ -1,0 +1,77 @@
+#
+# Key Mappings
+#
+#
+#       $Id: fvwm.keys,v 1.2 2009/09/14 15:46:57 jtimon Exp $
+#
+# --------------------------------------------------------------------------------
+#
+# $Log: fvwm.keys,v $
+# Revision 1.2  2009/09/14 15:46:57  jtimon
+# saving state
+#
+# Revision 1.1  2008/09/26 17:32:47  jtimon
+# Initial revision
+#
+#
+# --------------------------------------------------------------------------------
+#
+
+
+#
+# Arrow Keys
+# Scroll left or right with ctrl and arrow key
+#
+Key Left        A       C       Scroll -100 0
+Key Right       A       C       Scroll +100 +0
+#Key Up         A       C       Scroll +0   -100
+#Key Down       A       C       Scroll +0   +100
+
+# Scroll left or right with shift and arrow key
+#Key Left        A       S       Scroll -100 0
+#Key Right       A       S       Scroll +100 +0
+#Key Left        A       M2      Scroll -100 0
+
+# press arrow + meta key, and scroll by 1/10 of a page
+#Key Left        A       M       Scroll -100 +0
+#Key Right       A       M       Scroll +100 +0
+#Key Up          A       M       Scroll +0   -10
+#Key Down        A       M       Scroll +0   +10
+#Key Left        A       S       Scroll -100 +0
+#Key Right       A       S       Scroll +100 +0
+
+# press shift arrow + control anywhere, and move the pointer by 1% of a page
+#Key Left        A       SC      CursorMove -1 0
+#Key Right       A       SC      CursorMove +1 +0
+#Key Up          A       SC      CursorMove +0   -1
+#Key Down        A       SC      CursorMove +0   +1
+
+# press shift arrow + meta key, and move the pointer by 1/10 of a page
+#Key Left        A       SM      CursorMove -10 +0
+#Key Right       A       SM      CursorMove +10 +0
+#Key Up          A       SM      CursorMove +0   -10
+#Key Down        A       SM      CursorMove +0   +10
+
+# Keyboard accelerators
+#Key F1          A       M       Popup "Utilities"
+#Key F2          A       A       Popup "Window Ops"
+#Key F3 A M Module FvwmWinList
+#Key F4          A       A       Popup Quick_Launch
+Key F5           A       A       Function ManualCapture
+Key F6           A       A       Function Paste-a-roo
+Key F12          A       A       Function lock-er-up
+#Key F7          A       M       CirculateUp
+#Key F8          A       M       CirculateDown
+Key F10          A       A       Popup "Window Ops"
+
+#Page Up/Dapge Down keys are used to scroll by one desktop page
+# in any context, press page up/down + control
+# in root context, just pressing page up/down is OK
+# 
+# I prefer the non-wrapping scroll. These are for example purposes only
+#Key Next       A       C       Scroll 100000 0
+#Key Next       R       N       Scroll 100000 0  
+#Key Prior      A       C       Scroll -100000 0
+#Key Prior      R       N       Scroll -100000 0
+
+

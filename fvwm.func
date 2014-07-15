@@ -1,0 +1,219 @@
+# 
+# Definition of all the complex functions
+#	Start and Init
+#	Window Manipulation
+#	Dynamic Icon Creation
+#	Background Menu Creation
+#
+#       $Id: fvwm.func,v 1.4 2009/09/14 15:46:56 jtimon Exp $
+#
+# --------------------------------------------------------------------------------
+#
+# $Log: fvwm.func,v $
+# Revision 1.4  2009/09/14 15:46:56  jtimon
+# saving state
+#
+# Revision 1.3  2008/10/06 15:14:06  jtimon
+# added automatic weather tool
+#
+# Revision 1.2  2008/09/30 17:30:29  jtimon
+# added screen capture and full desktop capture
+#
+# Revision 1.1  2008/09/26 17:32:46  jtimon
+# Initial revision
+#
+#
+# --------------------------------------------------------------------------------
+#
+
+#
+# Fucntions that control Starting and Restarting FVWM
+#
+
+#DestroyFunc InitFunction
+AddToFunc "InitFunction" "I" Module FvwmButtons
++              "I" Exec exec /home/jtimon/rnd_pic.pl
++              "I" Function MakeBackgroundMenu
++ 						 "I" Schedule 800 Exec exec nm-applet
+
+
+#DestroyFunc RestartFunction
+AddToFunc "RestartFunction" "I" Module FvwmButtons
++              "I" Exec exec /home/jtimon/rnd_pic.pl
++               "I" Function MakeBackgroundMenu
++               "I" Module FvwmConsole
++ 						 "I" Schedule 800 Exec exec nm-applet
+
+
+DestroyFunc Bail
+AddToFunc "Bail" "I" Exec exec /sbin/init 0
+
+
+
+
+#
+# Complex Fucntions for Window Manipulation
+#
+
+# This one moves and then raises the window if you drag the mouse,
+# only raises the window if you click,  or does a RaiseLower if you double 
+# click
+DestroyFunc Move-or-Raise
+AddToFunc "Move-or-Raise" "M" Move
++              "M" Raise
++              "C" Raise
++              "D" RaiseLower
+
+# This one maximizes vertically if you click (leaving room for the GoodStuff bar at the
+# bottom, or does a full maximization if you double click, or a true full vertical 
+# maximization if you just hold the mouse button down.
+DestroyFunc maximize_func
+AddToFunc "maximize_func" "M" Maximize 0 100
++              "C" Maximize 0 100
++              "D" Maximize 100 100
+
+
+# This one moves and then lowers the window if you drag the mouse,
+# only lowers the window if you click,  or does a RaiseLower if you double 
+# click
+DestroyFunc Move-or-Lower
+AddToFunc "Move-or-Lower" "M" Move
++              "M" Lower
++              "C" Lower
++              "D" RaiseLower
+
+# This one moves or (de)iconifies:
+DestroyFunc Move-or-Iconify
+AddToFunc "Move-or-Iconify" "M" Move
++              "D" Iconify
+
+# This one resizes and then raises the window if you drag the mouse,
+# only raises the window if you click,  or does a RaiseLower if you double 
+# click
+DestroyFunc Resize-or-Raise
+AddToFunc "Resize-or-Raise" "M" Resize
++              "M" Raise
++              "C" Resize
++              "C" Raise
++              "D" RaiseLower
+
+DestroyFunc window_ops_func
+AddToFunc "window_ops_func" "C" PopUp "Window Ops2"
++              "M" PopUp "Window Ops2"
++              "D" Delete
+
+DestroyFunc window_rearrange
+AddToFunc "window_rearrange" "C" Module FvwmRearrange -tile -mn 2 
++               "D" Module FvwmRearrange -tile  -h -mn 2 
++               "M" Module FvwmRearrange -cascade -incx 2 -incy 2
+
+
+
+#
+# functions to create dynamic icons when a window is minimized
+#
+
+DestroyModuleConfig FvwmEvent
+*FvwmEvent: deiconify DeThumbnail
+#*FvwmEvent: enter_window AddBorder
+#*FvwmEvent: leave_window RemoveBorder
+Module FvwmEvent
+
+#DestroyFunc AddBorder
+#AddToFunc AddBorder
+ #+ "I" ThisWindow (Focused,aterm) WindowStyle BorderWidth 1
+ #
+#DestroyFunc RemoveBorder
+#AddToFunc RemoveBorder
+ #+ "I" All (aterm) WindowStyle BorderWidth 0 
+ 
+DestroyFunc Thumbnail
+AddToFunc Thumbnail
++ I Raise
++ I SetEnv Icon-$[w.id] $[w.iconfile]
++ I ThisWindow (!Shaded Iconifiable !Iconic) PipeRead \
+    'xwd -silent -id $[w.id] | convert -scale $$(($[w.width]/5)) -frame 1x1 \
+    -mattecolor black -quality 0 xwd:- png:$[fvwm_tmp]/icon.tmp.$[w.id].png \
+    && echo Nop'
++ I TestRc (Match) Test (f $[fvwm_icon]/$[w.iconfile], f $[fvwm_tmp]/icon.tmp.$[w.id].png) \
+    PipeRead "composite -geometry +2+4 \
+    $[fvwm_icon]/$[w.iconfile] $[fvwm_tmp]/icon.tmp.$[w.id].png \
+    $[fvwm_tmp]/icon.tmp.$[w.id].png && \
+    echo WindowStyle IconOverride, Icon $[fvwm_tmp]/icon.tmp.$[w.id].png || echo Nop"
++ I TestRc (NoMatch) WindowStyle IconOverride, Icon $[fvwm_tmp]/icon.tmp.$[w.id].png
++ I Iconify
+
+DestroyFunc DeThumbnail
+AddToFunc DeThumbnail
++ I PipeRead "echo WindowStyle Icon \\$\\[Icon-$[w.id]\\]"
++ I UnsetEnv Icon-$[w.id]
++ I Exec /usr/bin/rm -f $[fvwm_tmp]/icon.tmp.$[w.id].png
+
+
+#
+# make the background menu
+#
+DestroyFunc SetDefaultBackground
+AddToFunc SetDefaultBackground
+      + "I" Exec exec /home/jtimon/rnd_pic.pl $DISPLAY $0
+
+DestroyFunc MakeBackgroundMenu
+AddToFunc MakeBackgroundMenu
+ + "I" DestroyMenu BackgroundMenu
+ + "I" AddToMenu BackgroundMenu BackgroundMenu Title
+ #+ "I" Exec FvwmCommand '$[fvwm_script]/background_builder'
+ + "I" Exec '$[fvwm_script]/background_builder'
+ + "I" Exec rm $[fvwm_home]/WallpaperMenu
+ + "I" PipeRead 'for i in $HOME/back/*; \
+                do echo "AddToMenu BackgroundMenu" \
+                \"`basename $i`%$[fvwm_tmp]/small.`basename $i`.png%\" \
+                Function SetDefaultBackground `basename $i`\
+                >> $[fvwm_home]/WallpaperMenu; done && echo Nop'
+ + "I" Read $[fvwm_home]/WallpaperMenu
+
+#+ "I" Exec xlock -mode random
+DestroyFunc lock-er-up
+AddToFunc lock-er-up
+ + "I" Exec exec /usr/bin/xscreensaver-command -lock
+
+DestroyFunc Paste-a-roo
+AddToFunc Paste-a-roo
+ + "I" Exec exec  /usr/local/bin/crikey "exec ksh -o vi \n"
+ + "I" Exec exec  /usr/local/bin/crikey -s 1 "export 'PS1=\`hostname | cut -f1 -d.\` -> ' EDITOR=vi VISUAL=vi\n"
+ + "I" Exec exec  /usr/local/bin/crikey -s 2 'echo -e \\033c \n'
+ + "I" Exec echo Nop
+
+DestroyFunc Paste-a-roo-2
+AddToFunc Paste-a-roo-2
+ + "I" Exec exec  /usr/local/bin/crikey "exec ksh -o vi \n"
+ + "I" Exec exec  /usr/local/bin/crikey -s 1 "export 'PS1=\`hostname | cut -f1 -d.\` -> ' EDITOR=vi VISUAL=vi\n"
+ + "I" Exec exec  /usr/local/bin/crikey -s 2 'echo -e \\033c \n'
+ + "I" Exec echo Nop
+
+
+# 
+# Create a screen shot
+#
+# specific window
+#
+DestroyFunc FvwmWindowScreenshot
+AddToFunc   FvwmWindowScreenshot
++ I ThisWindow (!Shaded Iconifiable !Iconic) \
+  Exec /usr/bin/import -window $[w.id] -quality 100 -silent "$[fvwm_home]/screenshots/screenshot-`date +%F_%R:%S_%N`.jpg"
+
+#
+# Current Desktop
+#
+DestroyFunc FvwmDesktopScreenshot
+AddToFunc   FvwmDesktopScreenshot
++ I Exec sleep $0; import -window root -quality 100 -silent \
+  "$[fvwm_home]/screenshot/deskshot-`date +%F_%R`.jpg"
+
+DestroyFunc ManualCapture
+AddToFunc ManualCapture
++ I Raise
++ I SetEnv Capture-$[w.id] $[w.iconfile]
++ I ThisWindow (!Shaded Iconifiable !Iconic) PipeRead \
+    'xwd -silent -id $[w.id] | convert  -frame 1x1 \
+    -mattecolor black -quality 0 xwd:- png:$[fvwm_home]/screenshots/capture.`date +%F_%R`.$[w.name].png \
+    && echo Nop'

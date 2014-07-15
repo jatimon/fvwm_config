@@ -1,0 +1,11 @@
+#!/bin/sh
+
+#PTS=`ps | grep pts | awk '{print$2}' | sort -u`
+PTS=`ps`
+
+#echo "]11;black" > /dev/$PTS
+
+#echo "pts=$PTS" > /tmp/TIMON
+PTS=`env`
+#echo "pts=$PTS" >> /tmp/TIMON
+echo $1 > /tmp/TIMON

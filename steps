@@ -1,0 +1,9 @@
+1 remove no conforming jobs clearoldlogs2000.bad
+2 clear old batch programs
+3 put clean ClearOldLogs.bat program in place
+4 create automated task
+
+
+ /cygdrive/c/WINDOWS/system32/schtasks.exe /Create /RU Administrator /RP Em@1l2G0 /SC Daily /ST 07:30 /TR "c:\Program Files\ClearOldLogs\clearoldlogs2000.bat" /TN ClearOldLogs
+ /cygdrive/c/WINDOWS/system32/schtasks.exe /Create /RU Administrator /RP Em@1l2G0 /SC Daily /ST 07:30 /TR "c:\Program Files\ClearOldLogs\ClearOldLogs.bat" /TN ClearOldLogs
+

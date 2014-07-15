@@ -1,0 +1,56 @@
+head	1.1;
+access;
+symbols;
+locks; strict;
+comment	@# @;
+
+
+1.1
+date	2008.09.26.17.32.48;	author jtimon;	state Exp;
+branches;
+next	;
+
+
+desc
+@Inital Checkin
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@#
+# FvwmPager Setup
+# 
+#
+#       $Id$
+#
+# --------------------------------------------------------------------------------
+#
+# $Log$
+#
+# --------------------------------------------------------------------------------
+#
+
+Style "FvwmPager"       NoHandles
+
+DestroyModuleConfig FvwmPager: *
+*FvwmPager: DeskTopScale 40
+#PagerBackColor         #5c54c0
+#! PagerForeColor               #f0ecb6 [deleted]
+#*FvwmPager: Back VGradient 100 black white
+*FvwmPager: Back DarkGrey
+*FvwmPager: Fore Black
+#*FvwmPager: Fore DarkGrey4
+*FvwmPager: Font none
+*FvwmPager: Hilight SlateBlue4
+*FvwmPager: Balloons
+*FvwmPager: BalloonColorset * 9
+*FvwmPager: SolidSeparators
+*FvwmPager: SmallFont -*-times-medium-r-*-*-*-80-*-*-*-*-*-*
+*FvwmPager: NoStartIconic
+*FvwmPager: Colorset * 8
+*FvwmPager: ActiveColorset * 6
+@

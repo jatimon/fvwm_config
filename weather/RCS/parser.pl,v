@@ -1,0 +1,63 @@
+head	1.1;
+access;
+symbols;
+locks
+	jtimon:1.1; strict;
+comment	@# @;
+
+
+1.1
+date	2008.10.07.13.19.57;	author jtimon;	state Exp;
+branches;
+next	;
+
+
+desc
+@initial checkin
+base that almost works
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@#!/usr/bin/perl
+
+# cheap and dirty output AddToMenu stuff for weather in fvwm
+
+print "DestroyMenu MenuFvwmWeather\n";
+print "AddToMenu MenuFvwmWeather\n";
+
+while ($line = <>) {
+	chomp $line;
+	$line =~ s/<title>spacer//;
+	$line =~ /<title>(.*)<\/title>/ and print "+ \"\" Nop\n+ \"$1\"";
+	if ($line =~ /<description>/) { 
+		if ($line =~ /<description>(.*),$/) { print "\n+ \"$1\" \n";}
+		while ($line = <>) {
+			chomp $line;
+			$line =~ s/\t//g;
+			push @@ary, ".$line.";
+			#$line =~ s/\,/\n/g;
+			#$line =~ s/\&amp\;nbsp\;\&amp\;deg\;/ /g;
+			#print "\"$line\"" unless $line =~ /^$/;
+			$line =~ /<\/description>/ and last;
+		}				
+		
+		#$str = join '' , @@ary;
+		foreach $str (@@ary) {
+		$str =~ s/^\s*//g;
+		$str =~ s/\n*//g;
+		$str =~ s/\s\s+/ /g;
+		$str =~ s/\&amp\;nbsp\;\&amp\;deg\;/ /g;
+		$str =~ s/<\/description>//g;
+		print "+ \"$str\"\n" ;
+		}
+	}
+	@@ary="";
+}
+
+print "ChangeMenuStyle \"Window Ops\" MenuFvwmWeather\n";
+@

@@ -1,0 +1,104 @@
+head	1.2;
+access;
+symbols;
+locks; strict;
+comment	@# @;
+
+
+1.2
+date	2009.09.14.15.46.37;	author jtimon;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2008.09.26.17.32.41;	author jtimon;	state Exp;
+branches;
+next	;
+
+
+desc
+@Inital Checkin
+@
+
+
+1.2
+log
+@saving state
+@
+text
+@#
+# Global Colorset definitions
+#
+#       $Id: fvwm.colorsets,v 1.1 2008/09/26 17:32:41 jtimon Exp jtimon $
+#
+# --------------------------------------------------------------------------------
+#
+# $Log: fvwm.colorsets,v $
+# Revision 1.1  2008/09/26 17:32:41  jtimon
+# Initial revision
+#
+#
+# --------------------------------------------------------------------------------
+#
+
+CleanupColorsets
+
+# Inactive windows
+Colorset 0  fg darkgray, bg lightgray, sh lightgray, fgsh darkgray, RootTransparent buffer
+
+# Active windows
+Colorset 1  fg  #1010AA, bg white, sh white, fgsh rgb:05/46/a0, RootTransparent buffer
+
+# OLD INACTIVE WINDOWS
+Colorset 2 fg #ffff00, bg #948676
+
+# OLD ACTIVE WINDOWS
+Colorset 3 fg #faf5e8, bg #96807e
+
+# for Weather menu
+Colorset 4 fg Yellow,DGradient 500 LightBLue DarkBlue, SideColor blue, bg SlateBlue, SidePic $[fvwm_home]/icons/WeatherBar.png
+
+# new menu colors
+Colorset 5  fg MidnightBlue, bg white, hi rgb:05/46/a0, fgsh rgb:05/46/a0,  Shape  $[fvwm_theme_img]/menu_shape.xpm,  RootTransparent buffer, Tint white 85
+# Hilighted menu item
+#Colorset 6 fg white , bg  rgb:05/46/a0, hi  white, fgsh white
+Colorset 6 fg white , bg  rgb:05/46/a0, hi  white, fgsh white, RootTransparent buffer, Tint rgb:05/46/a0 35
+
+
+# Calculator  (don't recall why i have this)
+#Colorset 7 fg Yellow, Translucent White 65 , hi Average
+
+# Pager 
+Colorset 8 fg Yellow, Translucent White 65
+
+# Pager Balloon 
+Colorset 9 fg Yellow, bg #808080
+
+# Menu
+Colorset 14 fg  #f3f3a2, bg #808080, CGradient 1000 black white
+
+# Button Colorset
+Colorset 15 fg  #fefe56, bg #908090, Shape $[fvwm_theme_img]/dock_mask.xpm, CGradient 1000 black white
+# Button Active Colorset
+Colorset 16 fg  #fefe56,  Shape $[fvwm_theme_img]/dock_mask.xpm
+
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d4 1
+a4 1
+#       $Id$
+d8 4
+a11 1
+# $Log$
+d16 1
+d30 10
+d41 1
+a41 1
+Colorset 7 fg Yellow, Translucent White 65 , hi average
+@

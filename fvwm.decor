@@ -1,0 +1,62 @@
+#
+# Specific Decoration Definitions
+# this basically controls how title bar and window buttons look and feel
+#
+#       $Id: fvwm.decor,v 1.2 2009/09/14 15:46:56 jtimon Exp $
+#
+# --------------------------------------------------------------------------------
+#
+# $Log: fvwm.decor,v $
+# Revision 1.2  2009/09/14 15:46:56  jtimon
+# saving state
+#
+# Revision 1.1  2008/09/26 17:32:46  jtimon
+# Initial revision
+#
+#
+# --------------------------------------------------------------------------------
+#
+
+
+#Style * Borderwidth 0, NoHandles
+#Style *	Button 1, Button 2, Button 4, Button 6, GrabFocusOff
+#Style *	Colorset 0, HilightColorset 1
+#Style * Font "Shadow=1 C:xft:Blippo:pixelsize=16"
+
+DestroyDecor	Default
+AddToDecor	Default
++ BorderStyle	Simple -- HiddenHandles NoInset
++ TitleStyle	LeftJustified Height 28 -- flat
++ ButtonStyle	Reset
++ ButtonStyle	All Active (Colorset 0 -- flat) Inactive (Colorset 1 -- flat)
+  
+
++ AddTitleStyle Active	    MultiPixmap LeftButtons	AdjustedPixmap	$[fvwm_theme_img]/tb_leftend.png, \
+					LeftEnd		AdjustedPixmap	$[fvwm_theme_img]/tb_titlelefton.png, \
+					Main		TiledPixmap	$[fvwm_theme_img]/tb_titlemainon.png, \
+					RightEnd	AdjustedPixmap	$[fvwm_theme_img]/tb_titlerighton.png
++ AddTitleStyle	Inactive    MultiPixmap LeftButtons	AdjustedPixmap	$[fvwm_theme_img]/tb_leftend.png, \
+					LeftEnd		AdjustedPixmap	$[fvwm_theme_img]/tb_titleleftoff.png, \
+					Main		TiledPixmap	$[fvwm_theme_img]/tb_titlemainoff.png, \
+					RightEnd	AdjustedPixmap	$[fvwm_theme_img]/tb_titlerightoff.png
+
+
++ AddButtonStyle    8	    Active	Pixmap $[fvwm_theme_img]/tb_tileon.png -- flat
++ AddButtonStyle    8	    Inactive	Pixmap $[fvwm_theme_img]/tb_tileoff.png -- flat
+
++ AddButtonStyle    6	    Active	Pixmap $[fvwm_theme_img]/tb_resizeon.png -- flat
++ AddButtonStyle    6	    Inactive	Pixmap $[fvwm_theme_img]/tb_resizeoff.png -- flat
+
++ AddButtonStyle    4	    Active	Pixmap $[fvwm_theme_img]/tb_maxon.png -- flat
++ AddButtonStyle    4	    Inactive	Pixmap $[fvwm_theme_img]/tb_maxoff.png -- flat
+
++ AddButtonStyle    2	    Active	Pixmap $[fvwm_theme_img]/tb_closeon.png -- flat
++ AddButtonStyle    2	    Inactive	Pixmap $[fvwm_theme_img]/tb_closeoff.png -- flat
+
++ AddButtonStyle    1	    Active	Pixmap $[fvwm_theme_img]/tb_stickyon.png -- flat
++ AddButtonStyle    1	    Inactive	Pixmap $[fvwm_theme_img]/tb_stickyoff.png -- flat
+
+#+ AddButtonStyle    3	    Active	Pixmap $[fvwm_theme_img]/tb_minon.png -- flat
+#+ AddButtonStyle    3	    Inactive	Pixmap $[fvwm_theme_img]/tb_minoff.png -- flat
++ AddButtonStyle    0	    Active	Pixmap $[fvwm_theme_img]/tb_minon.png -- flat
++ AddButtonStyle    0	    Inactive	Pixmap $[fvwm_theme_img]/tb_minoff.png -- flat

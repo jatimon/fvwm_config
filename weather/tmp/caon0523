@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="ISO-8859-1"?><rss version="2.0">
+  <channel>
+    <title>The Weather Network - Paris, Ontario</title>
+    <link>http://www.theweathernetwork.com/index.php?product=weather&amp;placecode=caon0523&amp;ref=current_obs</link>
+    <description>The Weather Network - Canada's number one source for weather information in both the cable and web spaces. </description>
+	<copyright>Copyright The Weather Network. Use of this RSS feed is subject to the Terms of Use as defined at http://www.theweathernetwork.com/aboutus/copyright#rss</copyright>
+    <language>en-us</language>
+	<image>
+		<url>http://www.theweathernetwork.com/common/images/rss_logo_en.jpg</url>
+		<title>The Weather Network</title>
+		<link>http://www.theweathernetwork.com/index.php?product=weather&amp;placecode=caon0523&amp;ref=current_obs</link>
+	</image>
+	<docs>http://blogs.law.harvard.edu/tech/rss</docs>
+			
+    <item>
+      <title>Current Weather</title>
+	  <guid>http://www.theweathernetwork.com/index.php?product=weather&amp;placecode=caon0523&amp;ref=current_obs</guid>
+	  <link>http://www.theweathernetwork.com/index.php?product=weather&amp;placecode=caon0523&amp;ref=current_obs</link>
+      <pubDate>Tue, 30 Sep 2008 02:00:00 EDT</pubDate>
+	  <image>
+		<url>http://rss.counter.weather.ca/counter.gif</url>
+		<title>spacer</title>
+		<link>http://www.theweathernetwork.com/index.php?product=weather&amp;placecode=caon0523&amp;ref=current_obs</link>
+		</image>
+      <description>Partly cloudy,
+	  
+		18&amp;nbsp;&amp;deg;C		, Humidity		68%		, Wind 
+		W 20km/h		</description>
+	
+    </item>
+				
+
+    <item>
+      <title>Wednesday, Oct 1, 2008</title>
+	    <guid>http://www.theweathernetwork.com/index.php?product=weather&amp;placecode=caon0523&amp;ref=day1#ltermfx</guid>
+	    <link>http://www.theweathernetwork.com/index.php?product=weather&amp;placecode=caon0523&amp;ref=day1#ltermfx</link>
+	  <pubDate>Tue, 30 Sep 2008 02:44:00 EDT</pubDate>
+      <description>
+		Thunder- showers,
+		High  14&amp;nbsp;&amp;deg;C, Low  10&amp;nbsp;&amp;deg;C, P.O.P.  40%	  
+	  </description>
+    </item>
+
+   <item>
+      <title>Thursday, Oct 2, 2008</title>
+	    <link>http://www.theweathernetwork.com/index.php?product=weather&amp;placecode=caon0523&amp;ref=day2#ltermfx</link>
+		 <guid>http://www.theweathernetwork.com/index.php?product=weather&amp;placecode=caon0523&amp;ref=day2#ltermfx</guid>
+	  <pubDate>Tue, 30 Sep 2008 02:44:00 EDT</pubDate>
+       <description>
+		Cloudy with showers,
+		High 12&amp;nbsp;&amp;deg;C, Low 6&amp;nbsp;&amp;deg;C, P.O.P. 60%	  
+	  </description>
+    </item>
+
+     <item>
+      <title>Friday, Oct 3, 2008</title>
+	    <link>http://www.theweathernetwork.com/index.php?product=weather&amp;placecode=caon0523&amp;ref=day3#ltermfx</link>
+		 <guid>http://www.theweathernetwork.com/index.php?product=weather&amp;placecode=caon0523&amp;ref=day3#ltermfx</guid>
+	  <pubDate>Tue, 30 Sep 2008 02:44:00 EDT</pubDate>
+      <description>
+		Variable cloudiness,
+		High 12&amp;nbsp;&amp;deg;C, Low 5&amp;nbsp;&amp;deg;C, P.O.P. 30%	  
+	  </description>
+    </item>
+      </channel>
+</rss>
+

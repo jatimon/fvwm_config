@@ -1,0 +1,9 @@
+#!/bin/ksh
+
+for i in $HOME/back/*
+do
+convert $i -thumbnail 50x50 $HOME/.fvwm/temp_dir/small.`basename $i`.png &
+done
+
+sleep 5
+

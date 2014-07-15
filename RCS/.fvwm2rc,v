@@ -1,0 +1,989 @@
+head	1.10;
+access;
+symbols;
+locks
+	jtimon:1.10; strict;
+comment	@# @;
+
+
+1.10
+date	2008.09.26.16.51.22;	author jtimon;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2008.09.22.14.25.41;	author jtimon;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2008.09.17.18.46.57;	author jtimon;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2008.09.16.19.51.31;	author jtimon;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2008.09.15.19.16.25;	author jtimon;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2008.09.15.13.05.22;	author jtimon;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2008.09.08.15.06.16;	author jtimon;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2008.08.25.13.52.22;	author jtimon;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2008.08.22.16.01.45;	author jtimon;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2008.08.22.15.22.50;	author jtimon;	state Exp;
+branches;
+next	;
+
+
+desc
+@Initial Checkin
+@
+
+
+1.10
+log
+@Modularized the living crap out of my config
+now there are separate files for each bit
+FvwmButtons fvwm.buttons
+Colorsets fvwm.colorsets
+Decorations 		fvwm.decor
+Functions		fvwm.func
+Key Mappings		fvwm.keys
+Menu Config		fvwm.menu
+Pager Config		fvwm.pager
+Global Style		fvwm.style
+
+this makes it easier to change things on the fly with
+FVWMConsole.  just read one of these files
+@
+text
+@#
+#     $Id: .fvwm2rc,v 1.9 2008/09/22 14:25:41 jtimon Exp jtimon $ 
+#
+#  	History
+#
+# 	$Log: .fvwm2rc,v $
+# 	Revision 1.9  2008/09/22 14:25:41  jtimon
+# 	added thumbnail of the background images to the menu
+#
+# 	Revision 1.8  2008/09/17 18:46:57  jtimon
+# 	added custom digital clock and date and finally figured out
+# 	Fontconfig for font specification
+#
+# 	removed the xload fvwmbutton -- pretty useless since my PC doesn't carry a high load
+#
+# 	Revision 1.7  2008/09/16 19:51:31  jtimon
+# 	changed the clock so I could have both date and time in digital
+# 	still not a fan of what this does to the button bar size
+#
+# 	Revision 1.6  2008/09/15 19:16:25  jtimon
+# 	added some magic to open different Xterms depending on which button is pressed
+# 	- left is basic xterm
+# 	- middle is tom01
+# 	- right is jump1001
+#
+# 	also did similar for rdesktop button
+# 	- left is my windows box
+# 	- right is jump1002
+#
+# 	Revision 1.5  2008/09/15 13:05:22  jtimon
+# 	changed the resolution of rdesktop
+#
+# 	Revision 1.4  2008/09/08 15:06:16  jtimon
+# 	message around with a lot of transparency/translucency.
+# 	decided I don't like it
+#
+# 	Added a shape mask to the fvwmbuttons
+#
+# 	Revision 1.3  2008/08/25 13:52:22  jtimon
+# 	tweeked the color of text in xterm
+# 	part way through the Mac like dock
+#
+#
+#
+
+
+
+
+# 
+# setup environment variables
+#
+SetEnv fvwm_home /home/jtimon/.fvwm
+SetEnv fvwm_tmp $[fvwm_home]/temp_dir
+SetEnv fvwm_script $[fvwm_home]/scripts
+SetEnv fvwm_icons $[fvwm_home]/icons
+SetEnv fvwm_theme_img $[fvwm_home]/theme
+
+ModulePath	/usr/local/libexec/fvwm/2.5.26/
+ImagePath   /usr/include/X11/bitmaps:/usr/share/X11/fvwm2/pixmaps/:$[fvwm_icons]/:/usr/share/icons/hicolor/:/usr/local/share/fvwm-crystal/fvwm/icons/Default:/usr/share/icons
+
+# Now the fonts - one for menus, another for window titles, another for icons
+WindowFont		-*-helvetica-medium-r-normal-*-18-*-*-*-*-*-*-*
+IconFont		-adobe-helvetica-medium-r-*-*-11-*-*-*-*-*-*-*
+
+OpaqueMoveSize 100
+EdgeScroll 100 100
+EdgeResistance 180 0
+
+DeskTopSize 7x1
+
+
+#
+# Load up all of the individual components.
+#
+# Colorsets
+Read fvwm.colorsets
+# Pager Config
+Read fvwm.pager
+# FvwmButtons Config
+Read fvwm.buttons
+# Menu Config
+Read fvwm.menu
+# Complex Functions
+Read fvwm.func
+# Key Mappings
+Read fvwm.keys
+# Style settings
+Read fvwm.style
+# Decor settings
+Read fvwm.decor
+
+
+## Button 4 -- Maximize
+#ButtonStyle 4 4 50x30@@1 70x70@@0 30x70@@0 50x30@@1
+
+## Button 2 -- Destroy Window
+#ButtonStyle 2 17 20x20@@1 30x20@@1 50x40@@1 70x20@@1 80x20@@1 80x30@@0 60x50@@0 80x70@@1 80x80@@0 70x80@@0 50x60@@0 30x80@@0 20x80@@0 20x70@@0 40x50@@1 20x30@@0 20x20@@1
+
+## Button 3 --  Click will tile, Click Drag with Cascade
+##ButtonStyle 3 16 60x40@@1 60x80@@0 15x80@@0 15x40@@1 60x40@@1 40x40@@1 40x25@@1 75x25@@1 75x60@@0 60x60@@0 75x60@@0 75x40@@0 85x40@@0 85x15@@0 60x15@@1 60x25@@1
+#ButtonStyle 8 16 60x40@@1 60x80@@0 15x80@@0 15x40@@1 60x40@@1 40x40@@1 40x25@@1 75x25@@1 75x60@@0 60x60@@0 75x60@@0 75x40@@0 85x40@@0 85x15@@0 60x15@@1 60x25@@1
+
+## Button 8 -- Sticky
+##ButtonStyle 8 8 35x15@@1 20x50@@1 40x50@@0 30x80@@1 75x40@@0 50x40@@1 75x15@@0 35x15@@1
+#ButtonStyle 1 8 35x15@@1 20x50@@1 40x50@@0 30x80@@1 75x40@@0 50x40@@1 75x15@@0 35x15@@1
+
+## Button -- Delete Window (different from Destroy Window)
+#ButtonStyle 5 17 20x20@@1 30x20@@1 50x40@@1 70x20@@1 80x20@@1 80x30@@0 60x50@@0 80x70@@1 80x80@@0 70x80@@0 50x60@@0 30x80@@0 20x80@@0 20x70@@0 40x50@@1 20x30@@0 20x20@@1
+#ButtonStyle 12 17 20x20@@1 30x20@@1 50x40@@1 70x20@@1 80x20@@1 80x30@@0 60x50@@0 80x70@@1 80x80@@0 70x80@@0 50x60@@0 30x80@@0 20x80@@0 20x70@@0 40x50@@1 20x30@@0 20x20@@1
+
+##############################################################################
+# This defines the mouse bindings
+
+# First, for the mouse in the root window
+# Button 1 gives the Utilities menu
+# Button 2 gives the Window Ops menu
+# Button 3 gives the WindowList (like TwmWindows)
+# I use the AnyModifier (A) option for the modifier field, so you can hold down
+# any shift-control-whatever combination you want!
+
+#     Button	Context Modifi 	Function
+Mouse 1		R   	A       PopUp "Utilities"
+Mouse 2		R    	A      	PopUp "Window Ops"
+Mouse 3         R       A       WindowList
+
+# Now the title bar buttons
+# Any button in the left title-bar button gives the window ops menu
+# Any button in the right title-bar button Iconifies the window
+# Any button in the rightmost title-bar button maximizes
+# Note the use of "Mouse 0" for AnyButton.
+
+# TITLE BUTTONS
+
+#     Button	Context Modifi 	Function
+#Mouse 0		1    	A      	Function "window_ops_func"
+#Mouse 0		10    	A      	Function "window_rearrange"
+#Mouse 0		5    	A      	Delete
+#Mouse 0		12    	A      	Delete
+#Mouse 0		6    	A     	Iconify
+#Mouse 0		8    	A     	Stick toggle
+Mouse 0		1    	A      	Stick toggle
+Mouse 1		2    	A      	Delete
+Mouse 3		2    	A      	Destroy
+Mouse 0		8    	A      	Function "window_rearrange"
+Mouse 0		4    	A     	Function "maximize_func"
+Mouse 0		6    	A     	Function "Resize-or-Raise"
+Mouse 0		3    	A     	Thumbnail
+
+# Now the rest of the frame
+# Here I invoke my complex functions for Move-or-lower, Move-or-raise,
+# and Resize-or-Raise. 
+# Button 1 in the corner pieces, with any modifiers, gives resize or raise
+Mouse 1		F	A	Function "Resize-or-Raise"
+# Button 1 in the title, sides, or icon, w/ any modifiers, gives move or raise
+Mouse 1		TS	A	Function "Move-or-Raise"
+
+# Button 1 in an icons gives move for a drag, de-iconify for a double-click,
+# nothing for a single click
+# Button 2 in an icon, w/ any modifiers, gives de-iconify
+
+Mouse 1		I	A	Function "Move-or-Iconify"
+Mouse 2		I	A	Iconify
+
+# Button 2 in the corners, sides, or title-bar gives the window ops menu
+#Mouse 2		FST	A	Function "window_ops_func"
+# Button 3 anywhere in the decoration (except the title-bar buttons)
+# does a raise-lower
+Mouse 3		TSIF	A	RaiseLower
+
+# Button 3 in the window, with the Modifier-1 key (usually alt or diamond)
+# gives Raise-Lower. Used to use control here, but that interferes with xterm
+Mouse 3         W       M       RaiseLower
+
+
+
+*FvwmNoClutter 3600 Iconify 1
+*FvwmNoClutter 86400 Delete
+*FvwmNoCLutter 172800 Destroy
+
+*FvwmIdentBack MidnightBlue
+*FvwmIdentFore Yellow
+*FvwmIdentFont -adobe-helvetica-medium-r-*-*-12-*-*-*-*-*-*-*
+
+*FvwmWinListBack #908090
+*FvwmWinListFore MidnightBlue
+*FvwmWinListFont -adobe-helvetica-bold-r-*-*-10-*-*-*-*-*-*-*
+*FvwmWinListAction Click1 Iconify -1,Focus
+*FvwmWinListAction Click2 Iconify
+*FvwmWinListAction Click3 Module "FvwmIdent" FvwmIdent
+*FvwmWinListUseSkipList
+*FvwmWinListGeometry +0-1
+                                      
+
+
+
+@
+
+
+1.9
+log
+@added thumbnail of the background images to the menu
+@
+text
+@d2 1
+a2 1
+#     $Id: .fvwm2rc,v 1.8 2008/09/17 18:46:57 jtimon Exp jtimon $ 
+d7 3
+a51 2
+SetEnv fvwm_tmp /home/jtimon/.fvwm/temp_dir
+SetEnv fvwm_script /home/jtimon/.fvwm/scripts
+d53 4
+d58 2
+a59 36
+# this is used for non-selected windows, menus, and the panner
+#Style "*" ForeColor #c8ecce
+#Style "*" BackColor #165238
+
+Style "*" ForeColor #ffff00
+Style "*" BackColor #948676
+
+Key  SunF37 	A 	A	 Exec xterm -ls -s -sl 15000 -j -aw -sb -bg black -fg white -title "Xterm"
+Key  SunF36 	A 	A	Popup	"Servers"
+
+# this is used for the selected window
+HilightColor   #faf5e8 #96807e
+
+#PagerBackColor		#5c54c0
+#! PagerForeColor		#f0ecb6 [deleted]
+#! An FvwmPager config to emulate builtin pager would be as follows:
+*FvwmPagerBack SlateGrey
+*FvwmPagerFore Black
+*FvwmPagerFont none
+*FvwmPagerHilight SlateBlue4
+*FvwmPagerGeometry 150x20+1525+0
+*FvwmPagerSolidSeparators
+*FvwmPagerSmallFont -*-times-medium-r-*-*-*-80-*-*-*-*-*-*
+#*FvwmPagerDeskTopScale 32
+Module FvwmPager 0 0
+
+# Menu colors
+#MenuStyle * Foreground #ffffd4
+#MenuStyle * Background #bb9c4b
+MenuStyle * MenuColorset 14
+MenuStyle * HilightBack #ffffd4
+MenuStyle * ActiveFore #bb9c4b
+MenuStyle * Greyed SlateGrey
+MenuStyle * Hilight3DThick
+MenuStyle * TitleUnderlines2
+MenuStyle * TrianglesSolid, TrianglesUseFore
+a61 2
+#MenuStyle * Font -*-roman-*-*-*-*-20-*-*-*-*-*-*-*
+MenuStyle * Font -adobe-helvetica-bold-r-*-*-10-*-*-*-*-*-*-*
+a63 15
+IconFont		fixed
+
+# AutoRaise 750
+# ClickToFocus
+
+Style "*" IconBox -1 +900 +900 +1046
+#SuppressIcons
+#StubbornIcons
+#StubbornIconPlacement
+#StickyIcons
+
+Style "*" MWMFunctions
+Style "*" HintOverride
+Style "*" MWMDecor
+Style "*" MWMButtons
+a64 1
+#ClickTime 150
+a68 6
+Style "*" RandomPlacement
+Style "*" SmartPlacement
+Style "*" NoPPosition
+
+#DecorateTransients
+
+a69 1
+*FvwmPagerDeskTopScale 40
+a70 4
+#ModulePath	/usr/lib/X11/fvwm2/
+ModulePath	/usr/local/libexec/fvwm/2.5.26/
+#ImagePath /usr/share/pixmaps/:/usr/share/icons/:/usr/share/icons/mini/:/usr/local/icons/:/usr/local/icons/:/usr/include/X11/pixmaps:/usr/share/X11/fvwm2/pixmaps/
+ImagePath   /usr/include/X11/bitmaps:/usr/share/X11/fvwm2/pixmaps/
+d72 38
+a109 243
+Style "*" BorderWidth 5, HandleWidth 5, Icon unknown1.xpm
+Style "Fvwm*"      NoTitle, Sticky, WindowListSkip
+Style "FvwmPager" NoHandles
+#StaysOnTop
+Style "FvwmBanner" StaysOnTop
+Style "FvwmButtons"  NoTitle, NoHandles, Sticky, WindowListSkip, BorderWidth 0
+Style "xlock"      NoTitle, NoHandles, Sticky, WindowListSkip
+Style "xclock"	   NoTitle, NoHandles, WindowsListSkip, BorderWidth 0, Font 5x7
+Style "rdesktop"	   NoTitle
+Style "xterm"      Icon xterm.xpm, 
+Style "console"      Icon xterm.xpm, Color white/blue
+Style "xcalc"      Icon xcalc.xpm, Colorset 7
+Style "FvwmButtons"  Icon toolbox.xpm 
+Style "xload"	   Sticky, WindowListSkip, NoTitle
+
+
+# guts
+
+Colorset 14 fg  #ffffd4, bg #bb9c4b 
+#Colorset 14 fg  #ffffd4, Translucent #bb9c4b  05
+Colorset 15 fg  #fefe56, bg #908090, Shape /home/jtimon/.fvwm/dock_mask.xpm
+Colorset 16 fg  #fefe56, bg #A090A0, Shape /home/jtimon/.fvwm/dock_mask.xpm
+Colorset 7 fg Yellow, Translucent White 65 , hi average
+
+#MenuStyle * HilightBack #ffffd4
+#MenuStyle * ActiveFore #bb9c4b
+
+
+#
+# FvwmEvent
+#
+DestroyModuleConfig FvwmEvent: *
+*FvwmEvent: deiconify DeThumbnail
+
+
+
+AddToFunc "InitFunction" "I" Module FvwmButtons
+#+              "I" Exec exec xterm -aw -geometry 80x4+1+45 -sb -C -title "console" -name "Console" -fg white -bg black -sl 15000
++              "I" Exec exec /home/jtimon/rnd_pic.pl 
++ 	       "I" Function MakeBackgroundMenu
+
+
+AddToFunc "RestartFunction" "I" Module FvwmButtons
++              "I" Exec exec /home/jtimon/rnd_pic.pl 
++ 	       	"I" Function MakeBackgroundMenu
+#+		"I" Module FvwmConsole
+
+
+AddToFunc "Bail" "I" Exec exec /sbin/init 0
+
+
+
+# This one moves and then raises the window if you drag the mouse,
+# only raises the window if you click,  or does a RaiseLower if you double 
+# click
+AddToFunc "Move-or-Raise" "M" Move
++              "M" Raise
++              "C" Raise
++              "D" RaiseLower
+
+# This one maximizes vertically if you click (leaving room for the GoodStuff bar at the
+# bottom, or does a full maximization if you double click, or a true full vertical 
+# maximization if you just hold the mouse button down.
+AddToFunc "maximize_func" "M" Maximize 0 100
++              "C" Maximize 0 80
++              "D" Maximize 100 100
+
+
+# This one moves and then lowers the window if you drag the mouse,
+# only lowers the window if you click,  or does a RaiseLower if you double 
+# click
+AddToFunc "Move-or-Lower" "M" Move
++              "M" Lower
++              "C" Lower
++              "D" RaiseLower
+
+# This one moves or (de)iconifies:
+AddToFunc "Move-or-Iconify" "M" Move
++              "D" Iconify
+
+# This one resizes and then raises the window if you drag the mouse,
+# only raises the window if you click,  or does a RaiseLower if you double 
+# click
+AddToFunc "Resize-or-Raise" "M" Resize
++              "M" Raise
++              "C" Raise
++              "D" RaiseLower
+
+
+# This is provided as a hint only.
+# Move to a known page on the desktop, then start an application in a 
+# known location. Could also switch to a known desktop, I guess
+AddToFunc "abs_coord" "I" GoToPage 1,0
++              "I" Exec exec /usr/openwin/bin/xcalc -geometry +100+100
+
+
+AddToMenu "Servers" Servers Title
++	 "TOM" Popup "TOM Servers"
++	 "JUMP" Popup "Jump Servers"
++    "Imaging" Exec exec xterm -fg white -bg black -title "imaging" -aw -sb -s -sl 15000 -j -cr HotPink -e /usr/bin/ssh -X -l jtimon 10.64.61.128
+
+
+AddToMenu "TOM Servers" "TOM Servers" Title
++              "tom01 (Prod)" Exec exec xterm -fg white -bg black -title "tom01" -aw -sb -s -sl 15000 -j -cr HotPink -e /usr/bin/ssh -X -l jtimon tom01
+
+AddToMenu "Jump Servers" "Jump Servers" Title
++              "jump1001 (Prod)" Exec exec xterm -fg white -bg black -title "jump1001" -aw -sb -s -sl 15000 -j -cr HotPink -e /usr/bin/ssh -X -l root jump1001.network.rim.net
+
+AddToMenu "Shells" "Shells" Title
++              "Xterm 80x50" Exec exec xterm -aw -fg white -bg black -sb -s -sl 5000 -j -ls -title "XTerm - John" -geom 80x50 -fn fixed
++              "Xterm 80x25" Exec exec xterm -aw -fg white -bg black -sb -s -sl 5000 -j -ls -title "XTerm - John" -geom 80x25 -fn fixed
+
+
+AddToMenu "Entertainment" "Entertainment" Title
++              "Change Background" Exec exec /home/jtimon/rnd_pic.pl 
++ "Backgrounds" Popup "BackgroundMenu"
+
+# functions to create dynamic icons when a window is minimized
+DestroyFunc Thumbnail
+AddToFunc Thumbnail
++ I Raise
++ I SetEnv Icon-$[w.id] $[w.iconfile]
++ I ThisWindow (!Shaded Iconifiable !Iconic) PipeRead \
+    'xwd -silent -id $[w.id] | convert -scale $$(($[w.width]/5)) -frame 1x1 \
+    -mattecolor black -quality 0 xwd:- png:$[fvwm_tmp]/icon.tmp.$[w.id].png \
+    && echo Nop'
++ I TestRc (Match) Test (f $[fvwm_icon]/$[w.iconfile], f $[fvwm_tmp]/icon.tmp.$[w.id].png) \
+    PipeRead "composite -geometry +2+4 \
+    $[fvwm_icon]/$[w.iconfile] $[fvwm_tmp]/icon.tmp.$[w.id].png \
+    $[fvwm_tmp]/icon.tmp.$[w.id].png && \
+    echo WindowStyle IconOverride, Icon $[fvwm_tmp]/icon.tmp.$[w.id].png || echo Nop"
++ I TestRc (NoMatch) WindowStyle IconOverride, Icon $[fvwm_tmp]/icon.tmp.$[w.id].png
++ I Iconify
+
+DestroyFunc DeThumbnail
+AddToFunc DeThumbnail
++ I PipeRead "echo WindowStyle Icon \\$\\[Icon-$[w.id]\\]"
++ I UnsetEnv Icon-$[w.id]
++ I Exec /ur/bin/rm -f $[fvwm_tmp]/icon.tmp.$[w.id].png
+
+
+
+# screwing around
+# make the background menu
+AddToFunc MakeBackgroundMenu
+ + "I" DestroyMenu BackgroundMenu
+ + "I" AddToMenu BackgroundMenu BackgroundMenu Title
+ + "I" Exec FvwmCommand '$[fvwm_script]/background_builder && echo Nop'
+ + "I" Exec rm $[fvwm_home]/WallpaperMenu
+ + "I" PipeRead 'for i in $HOME/back/*; \
+		do echo "AddToMenu BackgroundMenu" \
+  		\"`basename $i`%$[fvwm_tmp]/small.`basename $i`.png%\" \
+  		Function SetDefaultBackground `basename $i`\
+ 		>> $[fvwm_home]/WallpaperMenu; done && echo Nop'
+ + "I" Read $[fvwm_home]/WallpaperMenu
+
+
+# set the default background
+      #+ "I" Exec exec /home/jtimon/rnd_pic.pl
+     AddToFunc SetDefaultBackground
+      + "I" Exec exec /home/jtimon/rnd_pic.pl $DISPLAY $0 
+
+
+AddToMenu	"Applications" "Applications" Title
++		"Acrobat"       Exec exec /opt/Acrobat5/bin/acroread
++		"XV"            Exec exec xv 
++		"File Manager"  Exec exec /usr/dt/bin/dtfile
++		"Audio Control"  Exec exec /usr/dt/bin/sdtaudiocontrol
+
+# This menu is invoked as a sub-menu - it allows you to quit,
+# restart, or switch to another WM.
+AddToMenu "Quit-Verify" "Really Quit Fvwm?" Title
++              "Yes, Really Quit" Quit
++              "Restart Fvwm" Restart /usr/local/bin/fvwm
++              "Re-initialize" Function InitFunction
++              "Bail" Function Bail
++              "" Nop
++              "No, Don't Quit" Nop
+
+## Provides a list of modules to fire off
+#AddToMenu "Modules" "Modules" Title
+#+              "FvwmButtons" Module FvwmButtons
+#+              "FvwmRearrange" Module FvwmRearrange -tile  -mn 2 
+
+# This menu will fire up some very common utilities
+AddToMenu "Utilities" "Utilities" Title
++              "Calculator" Exec exec xcalc
++              "" Nop
++              "Applications" Popup Applications
++              "" Nop
++              "Shells" Popup Shells
++              "" Nop
++	       "Servers" Popup Servers
++              "" Nop
++              "Entertainment" Popup Entertainment
++              "" Nop
++              "Exit Fvwm" Popup Quit-Verify
++              "" Nop
+#        Refresh "Refresh Screen"
+
+# This defines the most common window operations
+AddToMenu "Window Ops" "Window Ops" Title
++              "Move" Function Move-or-Raise
++              "Resize" Function Resize-or-Raise
++              "Raise" Raise
++              "Lower" Lower
++              "(De)Iconify" Iconify
++              "(Un)Stick" Stick
++              "(Un)Maximize" Function maximize_func
++              "" Nop
++              "Destroy" Destroy
++              "Delete" Delete
++              "" Nop
++              "Refresh Screen" Refresh
+
+# A trimmed down version of "Window Ops", good for binding to decorations
+AddToMenu "Window Ops2" "Move" Function Move-or-Raise
++              "Resize" Function Resize-or-Raise
++              "Raise" Raise
++              "Lower" Lower
++              "Iconify" Iconify
++              "(Un)Stick" Stick
++              "" Nop
++              "Quit" Destroy
++              "Close" Delete
++              "" Nop
++              "ScrollBar" Module FvwmScroll 2 2
+
+
+AddToFunc "window_ops_func" "C" PopUp "Window Ops2"
++              "M" PopUp "Window Ops2"
++              "D" Delete
+
+AddToFunc "window_rearrange" "C" Module FvwmRearrange -tile -mn 2
++		"D" Module FvwmRearrange -tile -mn 2 -h
++		"M" Module FvwmRearrange -cascade
+
+
+ButtonStyle 4 4 50x30@@1 70x70@@0 30x70@@0 50x30@@1
+ButtonStyle 2 17 20x20@@1 30x20@@1 50x40@@1 70x20@@1 80x20@@1 80x30@@0 60x50@@0 80x70@@1 80x80@@0 70x80@@0 50x60@@0 30x80@@0 20x80@@0 20x70@@0 40x50@@1 20x30@@0 20x20@@1
+ButtonStyle 3 16 60x40@@1 60x80@@0 15x80@@0 15x40@@1 60x40@@1 40x40@@1 40x25@@1 75x25@@1 75x60@@0 60x60@@0 75x60@@0 75x40@@0 85x40@@0 85x15@@0 60x15@@1 60x25@@1
+ButtonStyle 8 8 35x15@@1 20x50@@1 40x50@@0 30x80@@1 75x40@@0 50x40@@1 75x15@@0 35x15@@1
+ButtonStyle 5 17 20x20@@1 30x20@@1 50x40@@1 70x20@@1 80x20@@1 80x30@@0 60x50@@0 80x70@@1 80x80@@0 70x80@@0 50x60@@0 30x80@@0 20x80@@0 20x70@@0 40x50@@1 20x30@@0 20x20@@1
+a124 1
+#Mouse 3		R    	A      	Module "winlist" FvwmWinList transient
+d135 10
+a144 3
+Mouse 0		1    	A      	Function "window_ops_func"
+Mouse 0		2    	A      	Destroy
+Mouse 0		3    	A      	Function "window_rearrange"
+d146 2
+a147 4
+Mouse 0		5    	A      	Delete
+#Mouse 0		6    	A     	Iconify
+Mouse 0		6    	A     	Thumbnail
+Mouse 0		8    	A     	Stick toggle
+d165 1
+a165 1
+Mouse 2		FST	A	Function "window_ops_func"
+d174 1
+a174 80
+Key Left	A	C	Scroll -100 0
+Key Right	A	C	Scroll +100 +0
+#Key Up		A	C	Scroll +0   -100
+#Key Down	A	C	Scroll +0   +100
+# HACK
+# Arrow Keys
+# press arrow + shift anywhere, and scroll by 1 page
+Key Left	A	S	Scroll -100 0
+Key Right	A	S	Scroll +100 +0
+Key Left	A	M2	Scroll -100 0
+
+# press arrow + meta key, and scroll by 1/10 of a page
+Key Left	A	M	Scroll -100 +0
+Key Right	A	M	Scroll +100 +0
+Key Up		A	M	Scroll +0   -10
+Key Down	A	M	Scroll +0   +10
+Key Left	A	S	Scroll -100 +0
+Key Right	A	S	Scroll +100 +0
+
+# press shift arrow + control anywhere, and move the pointer by 1% of a page
+Key Left	A	SC	CursorMove -1 0
+Key Right	A	SC	CursorMove +1 +0
+Key Up		A	SC	CursorMove +0   -1
+Key Down	A	SC	CursorMove +0   +1
+
+# press shift arrow + meta key, and move the pointer by 1/10 of a page
+Key Left	A	SM	CursorMove -10 +0
+Key Right	A	SM	CursorMove +10 +0
+Key Up		A	SM	CursorMove +0   -10
+Key Down	A	SM	CursorMove +0   +10
+
+# Keyboard accelerators
+Key F1		A	M	Popup "Utilities"
+Key F1		A	M	Popup "Utilities"
+Key F2		A	M	Popup "Window Ops"
+Key F3 A M Module FvwmWinList
+Key F4		A	M	Iconify
+Key F5		A	M	Move
+Key F6		A	M	Resize
+Key F7		A	M	CirculateUp
+Key F8		A	M	CirculateDown
+
+#Page Up/Dapge Down keys are used to scroll by one desktop page
+# in any context, press page up/down + control
+# in root context, just pressing page up/down is OK
+# 
+# I prefer the non-wrapping scroll. These are for example purposes only
+#Key Next	A       C       Scroll 100000 0
+#Key Next	R       N       Scroll 100000 0  
+#Key Prior	A       C       Scroll -100000 0
+#Key Prior	R       N       Scroll -100000 0
+
+
+*FvwmButtons: Colorset 15
+*FvwmButtons: ActiveColorset 16
+*FvwmButtons: Font -adobe-helvetica-bold-r-*-*-10-*-*-*-*-*-*-*
+*FvwmButtons: Geometry +0+0x200x60
+*FvwmButtons: Rows 1
+#*FvwmButtons: Columns 7
+*FvwmButtons: Padding 1 1
+*FvwmButtons: BoxSize Fixed
+*FvwmButtons: (Size 75 20,Container(Columns 1, Rows 2))
+*FvwmButtons: (Swallow(UseOld,SwallowNew) "xclockd" ,\
+	`Exec xclock -face 'Adobe New Century Schoolbook:style=Bold:size=10' -d -strftime '%m-%d-%y' -name xclockd -fg \\#fefe56 -bg \\#908090` )
+*FvwmButtons: (Swallow(UseOld,SwallowNew) "xclockt" ,\
+	`Exec xclock -d -face 'Adobe New Century Schoolbook:style=Bold:size=10' -strftime '%I:%M:%S' -name xclockt -update 1 -fg \\#fefe56 -bg \\#908090` )
+*FvwmButtons: (End)
+#*FvwmButtons: (Size 60 20, Swallow xload `Exec xload -u 1 -bg \\#908090 -fg white -hl black -name xload`)
+*FvwmButtons: (Title Kill, Icon rbomb.xpm, \
+	 Action(Mouse 1) Destroy)
+*FvwmButtons: (Title Xlock,Icon xlock.xpm, \
+	 Action(Mouse 1) Exec "" xlock -mode random)
+*FvwmButtons: (Title xterm, Icon xterm.xpm, \
+	Action(Mouse 1) "exec xterm -ls -s -sl 15000 -j -aw -sb -bg black -fg yellow -title 'Xterm' ",\
+	Action(Mouse 2) "exec xterm -ls -s -sl 15000 -j -aw -sb -bg black -fg white -title 'tom01' -e /usr/bin/ssh -X -l jtimon tom01 ",\
+	Action(Mouse 3) "exec xterm -ls -s -sl 15000 -j -aw -sb -bg black -fg green -title 'jump1001'  -e /usr/bin/ssh -X -l root jump1001.network.rim.net ")
+*FvwmButtons: (Title Firefox, Icon firefox.xpm, Action(Mouse 1)  Exec ""  /usr/bin/firefox)
+*FvwmButtons: (Title Rdesktop, Icon display.xpm, \
+	Action(Mouse 1) "exec /usr/X11R6/bin/rdesktop -u jtimon -d rim.net -g 1680x1050 -b -K -a 24 -x l  -C jtimmon-lt",\
+	Action(Mouse 3) "exec /usr/X11R6/bin/rdesktop -u Administrator -d rim.net -g 1024x768  -b -K -a 24 -x l  -C jump1002.network.rim.net")
+@
+
+
+1.8
+log
+@added custom digital clock and date and finally figured out
+Fontconfig for font specification
+
+removed the xload fvwmbutton -- pretty useless since my PC doesn't carry a high load
+@
+text
+@d2 1
+a2 1
+#     $Id: .fvwm2rc,v 1.7 2008/09/16 19:51:31 jtimon Exp jtimon $ 
+d7 6
+d51 1
+d80 5
+a84 2
+MenuStyle * Foreground #ffffd4
+MenuStyle * Background #bb9c4b
+d86 3
+a88 1
+
+d148 2
+a149 2
+#Colorset 15 RootTransparent, fg  #fefe56, bg #908090, Tint white 20, bgTint white 20, RootTransparent,  Shape /home/jtimon/.fvwm/dock_mask.xpm
+Colorset 14 fg  #fefe56, bg #908090
+d154 4
+d277 9
+a285 1
+ + "I" PipeRead 'for i in `/bin/ls $HOME/back/*`; do echo AddToMenu BackgroundMenu `basename $i` Function SetDefaultBackground `basename $i` ; done'
+@
+
+
+1.7
+log
+@changed the clock so I could have both date and time in digital
+still not a fan of what this does to the button bar size
+@
+text
+@d2 1
+a2 1
+#     $Id: .fvwm2rc,v 1.6 2008/09/15 19:16:25 jtimon Exp jtimon $ 
+d7 4
+a72 3
+#MenuStyle * Foreground #fef5e8
+#MenuStyle * Background #124026
+#MenuStyle * Greyed SlateGrey
+a75 1
+#MenuStyle * MenuColorset 7
+d124 2
+a125 2
+Style "*lock"      NoTitle, NoHandles, Sticky, WindowListSkip
+Style "xclock"	   NoTitle, 
+d470 5
+a474 5
+*FvwmButtons: (Size 87 20, Container(Columns 1, Rows 2))
+*FvwmButtons: (Padding 0,Swallow "xclockd" ,\
+	`Exec xclock -d -strftime '%m-%d-%y' -name xclockd -fg \\#fefe56 -bg \\#908090` )
+*FvwmButtons: (Padding 0,Swallow "xclockt" ,\
+	`Exec xclock -d -strftime '%I:%M:%S' -name xclockt -update 1 -fg \\#fefe56 -bg \\#908090` )
+d476 1
+a476 1
+*FvwmButtons: (Size 60 20, Swallow xload `Exec xload -u 1 -bg \\#908090 -fg white -hl black -name xload`)
+@
+
+
+1.6
+log
+@added some magic to open different Xterms depending on which button is pressed
+- left is basic xterm
+- middle is tom01
+- right is jump1001
+
+also did similar for rdesktop button
+- left is my windows box
+- right is jump1002
+@
+text
+@d2 1
+a2 1
+#     $Id: .fvwm2rc,v 1.5 2008/09/15 13:05:22 jtimon Exp $ 
+d7 10
+d40 1
+d125 1
+a125 1
+Style "xclock"	   NoTitle
+d137 1
+d139 1
+d159 1
+d463 18
+a480 8
+*FvwmButtonsFont -adobe-helvetica-bold-r-*-*-10-*-*-*-*-*-*-*
+*FvwmButtonsGeometry +0+0
+*FvwmButtonsRows 1
+*FvwmButtons: (Swallow xclock 'Exec xclock -bg \\#908090 -fg white -hl green -hd white -update 1 -padding 0&')
+*FvwmButtons: (Swallow "xload" 'Exec xload -u 1  -bg \\#908090 -fg white -hl black&')
+*FvwmButtons Kill    rbomb.xpm    Destroy
+*FvwmButtons xlock xlock.xpm  Exec "" xlock -mode random 
+#*FvwmButtons xterm   xterm.xpm   Exec "xterm" exec xterm -ls -s -sl 15000 -j -aw -sb -bg black -fg yellow -title "Xterm" 
+d485 4
+a488 3
+*FvwmButtons firefox firefox.xpm  Exec ""  /usr/bin/firefox
+#*FvwmButtons Rdesktop   display.xpm   Exec "rdesktop" exec /usr/X11R6/bin/rdesktop -u jtimon -d rim.net -g 1680x1050 -b -K -a 24 -x l  -C jtimmon-lt
+*FvwmButtons: (Title Rdesktop, Icon display.xpm, Action(Mouse 1) "exec /usr/X11R6/bin/rdesktop -u jtimon -d rim.net -g 1680x1050 -b -K -a 24 -x l  -C jtimmon-lt",Action(Mouse 3) "exec /usr/X11R6/bin/rdesktop -u Administrator -d rim.net -g 1024x768  -b -K -a 24 -x l  -C jump1002.network.rim.net")
+@
+
+
+1.5
+log
+@changed the resolution of rdesktop
+@
+text
+@d2 1
+a2 1
+#     $Id: .fvwm2rc,v 1.4 2008/09/08 15:06:16 jtimon Exp jtimon $ 
+d7 3
+d51 1
+a51 1
+*FvwmPagerGeometry 150x20+1124+0
+d456 5
+a460 1
+*FvwmButtons xterm   xterm.xpm   Exec "xterm" exec xterm -ls -s -sl 15000 -j -aw -sb -bg black -fg yellow -title "Xterm" 
+d462 2
+a463 1
+*FvwmButtons Rdesktop   display.xpm   Exec "rdesktop" exec /usr/X11R6/bin/rdesktop -u jtimon -d rim.net -g 1600x1050 -b -K -a 24 -x l  -C jtimmon-lt
+@
+
+
+1.4
+log
+@message around with a lot of transparency/translucency.
+decided I don't like it
+
+Added a shape mask to the fvwmbuttons
+@
+text
+@d2 1
+a2 1
+#     $Id: .fvwm2rc,v 1.3 2008/08/25 13:52:22 jtimon Exp $ 
+d7 6
+d455 1
+a455 1
+*FvwmButtons Rdesktop   display.xpm   Exec "rdesktop" exec /usr/X11R6/bin/rdesktop -u jtimon -d rim.net -g 1280x1024 -b -K -a 24 -x l  -C jtimmon-lt
+@
+
+
+1.3
+log
+@tweeked the color of text in xterm
+part way through the Mac like dock
+@
+text
+@d2 1
+a2 1
+#     $Id: .fvwm2rc,v 1.2 2008/08/22 16:01:45 jtimon Exp $ 
+d6 5
+a10 1
+# 	$Log$
+d25 1
+d42 1
+a42 1
+*FvwmPagerGeometry 150x20+1445+0
+d55 2
+d59 2
+a60 1
+MenuStyle * Font -*-roman-*-*-*-*-20-*-*-*-*-*-*-*
+d93 2
+a94 1
+ModulePath	/usr/lib/X11/fvwm2/
+d109 1
+a109 1
+Style "xcalc"      Icon xcalc.xpm
+d116 3
+a118 25
+#
+# Mac like floating Dock
+#
+#####
+# DockButtons
+###########
+Style "DockButtons" !Title, !Handles, Sticky, WindowListSkip, \
+        CirculateSkip, BorderWidth 0, HandleWidth 0
+Colorset 15 RootTransparent, fg rgb:00/00/00, bg average, \
+  Tint white 40, bgTint white 40, RootTransparent, \
+  Shape /home/jtimon/.fvwm/dock_mask.xpm
+Colorset 16 RootTransparent, fg rgb:00/00/00, bg average, \
+  Tint white 40, bgTint white 40, RootTransparent
+
+DestroyModuleConfig DockButtons: *
+*DockButtons: Geometry 600x80
+*DockButtons: Colorset 15
+*DcokButtons: Rows 2
+*DockButtons: Columns 30
+*DockButtons: (1x2, Frame 0)
+*DockButtons: (4x2, Frame 0, Icon 64x64/terminal.png, \
+  Action(Mouse 1) "xterm", Action(Mouse 3) "FvwmXTerm")
+*DockButtons: (4x2, Frame 0, Icon /usr/share/pixmaps/firefox.png, \
+  Action(Mouse 1) "/usr/local/bin/firefox/firefox")
+
+a131 3
+#+	       "I" Function SetBackground
++          "I" Thumbnail
++		   "I" Module DockButtons
+d135 2
+a136 5
++ 	       "I" Function MakeBackgroundMenu
+#+ 		   "I" Iconify
++          "I" Thumbnail
++		   "I" Module DockButtons
++	       "I" Module FvwmConsole
+d229 1
+a229 1
++ I Exec rm -f $[fvwm_tmp]/icon.tmp.$[w.id].png
+d256 1
+a256 1
++              "Restart Fvwm" Restart /usr/local/bin/fvwm2
+d439 1
+a439 2
+*FvwmButtonsBack #908090
+*FvwmButtonsFore #fefe56
+d443 1
+a443 1
+*FvwmButtons: (Swallow XClock 'Exec xclock -bg \\#908090 -fg white -hl green -hd white -update 1 -padding 0&')
+d449 1
+a449 1
+*FvwmButtons Rdesktop   display.xpm   Exec "rdesktop" exec /usr/X11R6/bin/rdesktop -u jtimon -d rim.net -g  1600x1200  -b -K -a 24 -x l  -C jtimmon-lt
+@
+
+
+1.2
+log
+@Added the iconic images of the captured window
+@
+text
+@d2 1
+d4 1
+d6 1
+a6 2
+#     $Id: filename revision date time author state $ 
+#
+d108 26
+d146 2
+d154 2
+d467 1
+a467 1
+*FvwmButtons xterm   xterm.xpm   Exec "xterm" exec xterm -ls -s -sl 15000 -j -aw -sb -bg black -fg white -title "Xterm" 
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d1 16
+d36 1
+a36 1
+*FvwmPagerGeometry 300x50+880+0
+d104 10
+d115 1
+a115 1
++              "I" Exec exec xterm -aw -geometry 80x4+1+45 -sb -C -title "console" -name "Console" -fg white -bg black -sl 15000
+d123 3
+a191 8
+#AddToMenu "Multiple Servers" "Multiple Servers" Title
+#+	 "All ERP" Exec exec $HOME/bin/multi_term "lbc100,s lbc101,s lbc102,s lbc103,s lbc104,s lbc105,s lbc106,s lbc107,s "
+#+	 "All EBI" Exec exec $HOME/bin/multi_term "lbc200,s lbc201,s lbc202,s "
+#+	 "All London" Exec exec $HOME/bin/multi_term "lbc1 lbc3 lbc4 lbc5 lbc7 lbc8 lbc9 lbc20 lbc30 lbc62 lbc64 lbc65 lbc66 lbc80 lbc111 lbc120,s"
+#+	 "All Test" Exec exec $HOME/bin/multi_term "stest2 stest3 ldn64"
+#+	 "All WMS" Exec exec $HOME/bin/multi_term "lbc4 lob4 ldn4"
+
+
+d196 25
+a264 2
+#+	       "Multiple Servers" Popup "Multiple Servers"
+#+              "" Nop
+d345 2
+a346 1
+Mouse 0		6    	A     	Iconify
+@

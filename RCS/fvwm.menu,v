@@ -1,0 +1,321 @@
+head	1.4;
+access;
+symbols;
+locks; strict;
+comment	@# @;
+
+
+1.4
+date	2009.09.14.15.46.58;	author jtimon;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2008.10.06.15.13.52;	author jtimon;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2008.09.30.17.30.48;	author jtimon;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2008.09.26.17.32.47;	author jtimon;	state Exp;
+branches;
+next	;
+
+
+desc
+@Inital Checkin
+@
+
+
+1.4
+log
+@saving state
+@
+text
+@#
+# Menu Configuration
+#
+#
+#       $Id: fvwm.menu,v 1.3 2008/10/06 15:13:52 jtimon Exp jtimon $
+#
+# --------------------------------------------------------------------------------
+#
+# $Log: fvwm.menu,v $
+# Revision 1.3  2008/10/06 15:13:52  jtimon
+# added automatic weather tool
+#
+# Revision 1.2  2008/09/30 17:30:48  jtimon
+# added some more icons and menu options for screen and desk capture
+#
+# Revision 1.1  2008/09/26 17:32:47  jtimon
+# Initial revision
+#
+#
+# --------------------------------------------------------------------------------
+#
+
+MenuStyle *    BorderWidth 0, HilightBack, ActiveFore
+MenuStyle *    MenuColorset 5, ActiveColorset 6
+MenuStyle *    Hilight3DThickness 0, Animation
+MenuStyle *    Font "Shadow=1 C:xft:Blippo:pixelsize=16"
+MenuStyle *    PopupImmediately, PopdownImmediately, PopupOffset 0 100
+MenuStyle *    TitleUnderlines0, TrianglesSolid
+MenuStyle *    ItemFormat "%s%|%5.i%5.5l%5.5r%.5>%|%i"
+MenuStyle *    VerticalItemSpacing 0, VerticalTitleSpacing 0
+
+
+# Menu colors
+#MenuStyle * MenuColorset 14
+#MenuStyle * HilightBack #858585
+#MenuStyle * ActiveFore #fafa89
+#MenuStyle * Greyed SlateGrey
+#MenuStyle * Hilight3DThick
+#MenuStyle * TitleUnderlines2
+#MenuStyle * TrianglesSolid, TrianglesUseFore, SideColor HotPink
+
+#MenuStyle Weather MenuColorset 4
+#ChangeMenuStyle Weather MenuFvwmWeather
+
+
+# Now the fonts - one for menus, another for window titles, another for icons
+MenuStyle * Font -*-roman-*-*-*-*-20-*-*-*-*-*-*-*
+
+DestroyMenu Utilities 
+AddToMenu "Utilities" "Utilities" Title
++              "Applications"%my_application.png% Popup Applications
++              "" Nop
++              "Shells"%Tango/32x32/apps/openterm.png% Popup Shells
++              "" Nop
++              "Servers"%slick/32x32/filesystems/server.png% Popup Servers
++              "" Nop
++              "Entertainment"%crystalsvg/32x32/apps/ktuberling.png% Popup Entertainment
++              "" Nop
++              "Exit Fvwm"%kids/32x32/actions/exit.png% Popup Quit-Verify
++              "" Nop
+
+DestroyMenu Quick_Launch
+AddToMenu "Quick_Launch" "Quick_Launch" Title
++              "tom01 (Prod)"%slick/32x32/filesystems/server.png% Exec exec rxvt -fg white -bg black -title "tom01" -st -sb -si -sk -sl 15000 -cr HotPink -e /usr/bin/ssh -X -l jtimon tom01
++              "jump1001 (Prod)"%slick/32x32/filesystems/server.png% Exec exec rxvt -fg white -bg black -title "jump1001" -st -sb -si -sk -sl 15000 -cr HotPink -e /usr/bin/ssh -X -l root jump1001.network.rim.net
++              "Xterm 80x25"%Tango/32x32/apps/openterm.png% Exec exec rxvt  -st -sb -si -sk -sl 15000 -bg black -fg white -geometry 80x25 -title 'Xterm - John'
+
+DestroyMenu Servers
+AddToMenu "Servers" Servers Title Servers
++        "TOM"%kids/32x32/actions/next-sail.png% Popup "TOM Servers"
++        "JUMP"%kids/32x32/actions/next-sail.png% Popup "Jump Servers"
+#+        "Imaging"%slick/32x32/filesystems/server.png% Exec exec xterm -fg white -bg black -title "imaging" -aw -sb -s -sl 15000 -j -cr HotPink -e /usr/bin/ssh -X -l jtimon 10.64.61.128
++        "Imaging"%slick/32x32/filesystems/server.png% Exec exec rxvt -st -sb -si -sk -sl 15000 -bg black -fg white -title "imaging"  -cr HotPink -e /usr/bin/ssh -X -l jtimon 10.64.61.128
+
+DestroyMenu "TOM Servers"
+AddToMenu "TOM Servers" "TOM Servers" Title
+#+              "tom01 (Prod)"%slick/32x32/filesystems/server.png% Exec exec xterm -fg white -bg black -title "tom01" -aw -sb -s -sl 15000 -j -cr HotPink -e /usr/bin/ssh -X -l jtimon tom01
++              "tom01 (Prod)"%slick/32x32/filesystems/server.png% Exec exec rxvt -fg white -bg black -title "tom01" -st -sb -si -sk -sl 15000 -cr HotPink -e /usr/bin/ssh -X -l jtimon tom01
+
+DestroyMenu "Jump Servers"
+AddToMenu "Jump Servers" "Jump Servers" Title
+#+              "jump1001 (Prod)"%slick/32x32/filesystems/server.png% Exec exec xterm -fg white -bg black -title "jump1001" -aw -sb -s -sl 15000 -j -cr HotPink -e /usr/bin/ssh -X -l root jump1001.network.rim.net
++              "jump1001 (Prod)"%slick/32x32/filesystems/server.png% Exec exec rxvt -fg white -bg black -title "jump1001" -st -sb -si -sk -sl 15000 -cr HotPink -e /usr/bin/ssh -X -l root jump1001.network.rim.net
+
+DestroyMenu Shells
+AddToMenu "Shells" "Shells" Title
+#+              "Xterm 80x50"%Tango/32x32/apps/openterm.png% Exec exec xterm -aw -fg white -bg black -sb -s -sl 5000 -j -ls -title "XTerm - John" -geom 80x50 -fn fixed
+#+              "Xterm 80x25"%Tango/32x32/apps/openterm.png% Exec exec xterm -aw -fg white -bg black -sb -s -sl 5000 -j -ls -title "XTerm - John" -geom 80x25 -fn fixed
++              "Xterm 80x25"%Tango/32x32/apps/openterm.png% Exec exec rxvt  -st -sb -si -sk -sl 15000 -bg black -fg white -geometry 80x25 -title 'Xterm - John'
++              "Xterm 80x50"%Tango/32x32/apps/openterm.png% Exec exec rxvt  -st -sb -si -sk -sl 15000 -bg black -fg white -geometry 80x50 -title 'Xterm - John'
+
+
+DestroyMenu Entertainment
+AddToMenu "Entertainment" "Entertainment" Title
++               "Change Background"%gnome/32x32/apps/background.png% Exec exec /home/jtimon/rnd_pic.pl
++               "Backgrounds"%kids/32x32/actions/search.png% Popup "BackgroundMenu"
++               "XEarth"%oxygen/32x32/actions/world.png% Exec exec "/usr/bin/xearth -proj merc -label -markerfile /home/jtimon/.marker -fork"
++ "" Nop
++ 		"Window Screenshot"%kids/32x32/apps/camera.png%  Pick (CirculateHit) FvwmWindowScreenshot
++ 		"Screenshot"%kids/32x32/apps/camera.png%	 FvwmDesktopScreenshot 5
++		"" Nop
++ 		"Weather"%weather.png%  Popup MenuFvwmWeather
+
+DestroyMenu MenuFvwmWeather
+AddToMenu MenuFvwmWeather
++  DynamicPopupAction PipeRead '$[fvwm_weather]/fvwm_get_weather.sh'
+
+DestroyMenu Applications
+AddToMenu       "Applications" "Applications" Title
++              "Calculator"%kids/32x32/apps/kcalc.png%          Exec exec /usr/bin/xcalc
++               "Acrobat"%32x32/apps/evince.png%       Exec exec /usr/bin/evince
++               "Gimp"%32x32/apps/gimp.png%          Exec exec /usr/bin/gimp
++               "File Manager"%oxygen/32x32/apps/system-file-manager.png%  Exec exec /usr/bin/gnome-commander   
++               "Real Player"%32x32/apps/realplay.png%  Exec exec /usr/bin/realplay
++               "Brasero"%/usr/share/icons/hicolor/32x32/apps/brasero.png%  Exec exec /usr/bin/brasero
++               "FvwmConsole"%/usr/local/share/fvwm-crystal/fvwm/icons/Default/32x32/apps/aterm.png%  Module FvwmConsole
+
+DestroyMenu Quit-Verify
+AddToMenu "Quit-Verify" "Really Quit Fvwm?" Title
++              "Yes, Really Quit"%kids/32x32/actions/exit.png% Quit
++              "Restart Fvwm"%kids/32x32/actions/reload.png% Restart /usr/local/bin/fvwm
++              "Re-initialize"%kids/32x32/actions/redo.png% Function InitFunction
++              "Bail"%kids/32x32/actions/run.png% Function Bail
++              "" Nop
++              "No, Don't Quit"%kids/32x32/actions/stop.png% Nop
+
+
+# This defines the most common window operations
+DestroyMenu "Window Ops"
+AddToMenu "Window Ops" "Window Ops" Title
++              "Move"%wm-icons/32x32-kde2/window-move.xpm% Function Move-or-Raise
++              "Resize" Function Resize-or-Raise
++              "Raise"%kids/32x32/actions/up.png% Raise
++              "Lower"%kids/32x32/actions/down.png% Lower
++              "(De)Iconify"%kids/32x32/actions/window_nofullscreen.png% Iconify
++              "(Un)Stick" Stick
++              "(Un)Maximize"%kids/32x32/actions/window_fullscreen.png% Function maximize_func
++              "" Nop
++              "Destroy"%kids/32x32/actions/button_cance.png% Destroy
++              "Delete"%crystalsvg/32x32/actions/eraser.png% Delete
++              "" Nop
++              "Refresh Screen"%kids/32x32/actions/reload.png% Refresh
+@
+
+
+1.3
+log
+@added automatic weather tool
+@
+text
+@d5 1
+a5 1
+#       $Id: fvwm.menu,v 1.2 2008/09/30 17:30:48 jtimon Exp jtimon $
+d10 3
+d23 10
+d34 7
+a40 7
+MenuStyle * MenuColorset 14
+MenuStyle * HilightBack #858585
+MenuStyle * ActiveFore #fafa89
+MenuStyle * Greyed SlateGrey
+MenuStyle * Hilight3DThick
+MenuStyle * TitleUnderlines2
+MenuStyle * TrianglesSolid, TrianglesUseFore, SideColor HotPink
+d42 2
+a43 2
+MenuStyle "Window Ops" ActiveFore Black
+ChangeMenuStyle "Window Ops" MenuFvwmWeather
+d62 6
+d72 2
+a73 1
++        "Imaging"%slick/32x32/filesystems/server.png% Exec exec xterm -fg white -bg black -title "imaging" -aw -sb -s -sl 15000 -j -cr HotPink -e /usr/bin/ssh -X -l jtimon 10.64.61.128
+d77 2
+a78 1
++              "tom01 (Prod)"%slick/32x32/filesystems/server.png% Exec exec xterm -fg white -bg black -title "tom01" -aw -sb -s -sl 15000 -j -cr HotPink -e /usr/bin/ssh -X -l jtimon tom01
+d82 2
+a83 1
++              "jump1001 (Prod)"%slick/32x32/filesystems/server.png% Exec exec xterm -fg white -bg black -title "jump1001" -aw -sb -s -sl 15000 -j -cr HotPink -e /usr/bin/ssh -X -l root jump1001.network.rim.net
+d87 4
+a90 2
++              "Xterm 80x50"%Tango/32x32/apps/openterm.png% Exec exec xterm -aw -fg white -bg black -sb -s -sl 5000 -j -ls -title "XTerm - John" -geom 80x50 -fn fixed
++              "Xterm 80x25"%Tango/32x32/apps/openterm.png% Exec exec xterm -aw -fg white -bg black -sb -s -sl 5000 -j -ls -title "XTerm - John" -geom 80x25 -fn fixed
+d97 1
+d102 1
+a102 1
++ 		"Weather"  Popup MenuFvwmWeather
+d104 1
+d106 1
+a106 1
++ 	        DynamicPopupAction Function MenuFvwmWeather
+d115 1
+@
+
+
+1.2
+log
+@added some more icons and menu options for screen and desk capture
+@
+text
+@d5 1
+a5 1
+#       $Id: fvwm.menu,v 1.1 2008/09/26 17:32:47 jtimon Exp jtimon $
+d10 3
+d27 1
+a27 1
+MenuStyle * TrianglesSolid, TrianglesUseFore
+d29 2
+d36 12
+d50 1
+a50 1
+AddToMenu "Servers" Servers Title
+d76 2
+d79 2
+a99 13
+# This menu will fire up some very common utilities
+DestroyMenu Utilities
+AddToMenu "Utilities" "Utilities" Title
++              "Applications"%my_application.png% Popup Applications
++              "" Nop
++              "Shells"%Tango/32x32/apps/openterm.png% Popup Shells
++              "" Nop
++              "Servers"%slick/32x32/filesystems/server.png% Popup Servers
++              "" Nop
++              "Entertainment"%crystalsvg/32x32/apps/ktuberling.png% Popup Entertainment
++              "" Nop
++              "Exit Fvwm"%kids/32x32/actions/exit.png% Popup Quit-Verify
++              "" Nop
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d5 1
+a5 1
+#       $Id$
+d9 4
+a12 1
+# $Log$
+d32 1
+d38 1
+d42 1
+d46 1
+d52 1
+d56 4
+d61 1
+d70 1
+d80 1
+d94 1
+d96 1
+a96 15
++              "Move" Function Move-or-Raise
++              "Resize" Function Resize-or-Raise
++              "Raise" Raise
++              "Lower" Lower
++              "(De)Iconify" Iconify
++              "(Un)Stick" Stick
++              "(Un)Maximize" Function maximize_func
++              "" Nop
++              "Destroy" Destroy
++              "Delete" Delete
++              "" Nop
++              "Refresh Screen" Refresh
+
+# A trimmed down version of "Window Ops", good for binding to decorations
+AddToMenu "Window Ops2" "Move" Function Move-or-Raise
+d98 3
+a100 3
++              "Raise" Raise
++              "Lower" Lower
++              "Iconify" Iconify
+d102 1
+d104 2
+a105 2
++              "Quit" Destroy
++              "Close" Delete
+d107 1
+a107 2
++              "ScrollBar" Module FvwmScroll 2 2
+
+@
