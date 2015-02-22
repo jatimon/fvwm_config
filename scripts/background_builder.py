@@ -15,12 +15,12 @@ def main():
     mymagic = magic.open(magic.MAGIC_MIME_TYPE)
     mymagic.load()
     
-    f=open('myfile','w')
+    f=open('/home/jtimon/.fvwm/WallpaperMenu','w')
     for image in a:
         if "image" in mymagic.file(image.fqp):
-            cmd="convert {0.fqp} -thumbnail 50x50 $HOME/.fvwm/temp_dir/{0.name}".format(image)
+            cmd="convert {0.fqp} -thumbnail 50x50 $HOME/.fvwm/temp_dir/{0.name}.png".format(image)
             system(cmd)
-            menu="AddToMenu BackgroundMenu {0.name}%$HOME/.fvwm/temp_dir/{0.name}% Function SetDefaultBackground {0.fqp}".format(image)
+            menu="AddToMenu BackgroundMenu \"{0.name}\"%/home/jtimon/.fvwm/temp_dir/{0.name}.png% Function SetDefaultBackground {0.fqp}".format(image)
             print(menu, file=f)
     f.close()
 

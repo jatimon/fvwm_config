@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# start these applets
+# mate-volume-control-applet
+# nm-applet
+# mate-power-manager
+
+for I in mate-panel mate-volume-control-applet nm-applet mate-power-manager krb5-auth-dialog 
+do
+	pid=$(pidof $I)
+	if [ -z $pid ]
+	then 
+		# start the applet
+		exec $I &
+	#else
+		# should I kill the pid
+		#kill -9 $pid
+	fi
+done
+
+
