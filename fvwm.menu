@@ -226,7 +226,7 @@ AddToMenu "Shells" "Shells" Title
 
 DestroyMenu Entertainment
 AddToMenu "Entertainment" "Entertainment" Title
-+               "Change Background"%gnome/32x32/apps/background.png% Exec exec /home/jtimon/rnd_pic.pl
++               "Change Background"%gnome/32x32/apps/background.png% Exec exec /home/jtimon/.fvwm/rnd_pic.py
 +               "Backgrounds"%kids/32x32/actions/search.png% Popup "BackgroundMenu"
 +               "XEarth"%oxygen/32x32/actions/world.png% Exec exec "/usr/bin/xearth -proj merc -label -markerfile /home/jtimon/.marker -fork"
 + "" Nop
@@ -240,6 +240,7 @@ AddToMenu MenuFvwmWeather
 
 DestroyMenu Applications
 AddToMenu       "Applications" "Applications" Title
++               "FvwmConsole"%aterm.png%  Module FvwmConsole
 +              "Calculator"%kids/32x32/apps/kcalc.png%          Exec exec /usr/bin/xcalc
 +               "Acrobat"%32x32/apps/evince.png%       Exec exec /usr/bin/evince
 +               "Gimp"%32x32/apps/gimp.png%          Exec exec /usr/bin/gimp
@@ -247,7 +248,6 @@ AddToMenu       "Applications" "Applications" Title
 +               "Real Player"%32x32/apps/realplay.png%  Exec exec /usr/bin/realplay
 +               "Brasero"%/usr/share/icons/hicolor/32x32/apps/brasero.png%  Exec exec /usr/bin/brasero
 +               "Software Center"%/usr/share/icons/slick/32x32/apps/xapp.png%  Exec exec /usr/bin/software-center
-+               "FvwmConsole"%/usr/local/share/fvwm-crystal/fvwm/icons/Default/32x32/apps/aterm.png%  Module FvwmConsole
 
 DestroyMenu Quit-Verify
 AddToMenu "Quit-Verify" "Really Quit Fvwm?" Title

@@ -55,6 +55,6 @@ DestroyModuleConfig FvwmButtons: *
         Action(Mouse 1) "exec xterm   -sb -si -sk -sl 15000 -bg black -fg white -geometry 80x25 -title 'Xterm - John' ",\
         Action(Mouse 2) "exec xterm   -sb -si -sk -sl 15000 -bg black -fg white -geometry 80x25 -title 'Xterm - Work' -e  /usr/bin/ssh -X jtimon@jtimon-lx ",\
         Action(Mouse 3) "exec xterm   -sb -si -sk -sl 15000 -bg black -fg white -geometry 80x50 -title 'Xterm - John' ")
-*FvwmButtons: (5x1, Swallow(UseOld,SwallowNew,Kill, Respawn) "stalonetray" `Exec exec stalonetray `)
+#*FvwmButtons: (5x1, Swallow(UseOld,SwallowNew,Kill, Respawn) "stalonetray" `Exec exec stalonetray `)
 *FvwmButtons: (7x1, Swallow(UseOld,SwallowNew)  FvwmPager 'Module FvwmPager')
 
