@@ -88,6 +88,7 @@ EdgeResistance 180
 Style * EdgeMoveDelay 180
 Style * EdgeMoveResistance 0
 
+EWMHUseStackingOrderHints
 
 DeskTopSize 9x1
 
@@ -100,7 +101,7 @@ Read fvwm.colorsets
 # Pager Config
 Read fvwm.pager
 # FvwmButtons Config
-Read fvwm.buttons
+# Read fvwm.buttons
 # Menu Config
 Read fvwm.menu
 # Complex Functions
@@ -216,4 +217,6 @@ Mouse 3         W       M       RaiseLower
                                       
 
 
+
+AddToFunc StartFunction "I" Module FvwmCommandS
 

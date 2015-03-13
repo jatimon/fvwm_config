@@ -56,9 +56,9 @@ AddToMenu "Utilities" "Utilities" Title
 +              "" Nop
 +              "Shells"%Tango/32x32/apps/openterm.png% Popup Shells
 +              "" Nop
-+              "Altus"%slick/32x32/filesystems/server.png% Popup "Altus"
-+              "" Nop
-+              "Servers"%slick/32x32/filesystems/server.png% Popup Servers
+#+              "Altus"%slick/32x32/filesystems/server.png% Popup "Altus"
+#+              "" Nop
++              "Dev Server"%slick/32x32/filesystems/server.png% Exec exec aterm -st -sb -si -sk -sl 15000 -bg black -fg white -title "DevServer"  -cr HotPink -e /usr/bin/ssh -X sb
 +              "" Nop
 +              "Entertainment"%crystalsvg/32x32/apps/ktuberling.png% Popup Entertainment
 +              "" Nop

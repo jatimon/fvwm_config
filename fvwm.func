@@ -30,19 +30,22 @@
 # Fucntions that control Starting and Restarting FVWM
 #
 
+# I have removed Buttons in places of mate-panel
 #DestroyFunc InitFunction
-AddToFunc "InitFunction" "I" Module FvwmButtons
-+              "I" Exec exec /home/jtimon/.fvwm/rnd_pic.py
+#AddToFunc "InitFunction" "I" Module FvwmButtons
+AddToFunc "InitFunction"  "I" Exec exec /home/jtimon/.fvwm/rnd_pic.py
 +              "I" Function MakeBackgroundMenu
-+ 						 "I" Schedule 800 Exec exec nm-applet
++              "I" Exec exec /home/jtimon/.fvwm/scripts/applets
+#HACK+							 "I" Exec exec start drop box here HACK
 
 
 #DestroyFunc RestartFunction
-AddToFunc "RestartFunction" "I" Module FvwmButtons
-+              "I" Exec exec /home/jtimon/.fvwm/rnd_pic.py
+# I have removed Buttons in places of mate-panel
+#AddToFunc "RestartFunction" "I" Module FvwmButtons
+AddToFunc "RestartFunction"  "I" Exec exec /home/jtimon/.fvwm/rnd_pic.py
 +              "I" Module FvwmConsole
 +              "I" Function MakeBackgroundMenu
-+ 						 "I" Schedule 800 Exec exec nm-applet
++              "I" Exec exec /home/jtimon/.fvwm/scripts/applets
 
 
 DestroyFunc Bail
@@ -147,7 +150,7 @@ DestroyFunc DeThumbnail
 AddToFunc DeThumbnail
 + I PipeRead "echo WindowStyle Icon \\$\\[Icon-$[w.id]\\]"
 + I UnsetEnv Icon-$[w.id]
-+ I Exec /usr/bin/rm -f $[fvwm_tmp]/icon.tmp.$[w.id].png
++ I Exec rm -f $[fvwm_tmp]/icon.tmp.$[w.id].png
 
 
 #
@@ -163,17 +166,18 @@ AddToFunc MakeBackgroundMenu
  + "I" AddToMenu BackgroundMenu BackgroundMenu Title
  #+ "I" Exec FvwmCommand '$[fvwm_script]/background_builder'
  + "I" Exec '$[fvwm_script]/background_builder.py'
+ + "I" Read /home/jtimon/.fvwm/WallpaperMenu
 #+ "I" Exec rm $[fvwm_home]/WallpaperMenu
 #+ "I" PipeRead 'for i in $HOME/back/*; \
 #do echo "AddToMenu BackgroundMenu" \
 #\"`basename $i`%$[fvwm_tmp]/small.`basename $i`.png%\" \
 #Function SetDefaultBackground `basename $i`\
 #>> $[fvwm_home]/WallpaperMenu; done && echo Nop'
- + "I" Read $[fvwm_home]/WallpaperMenu
 
 #+ "I" Exec xlock -mode random
 DestroyFunc lock-er-up
 AddToFunc lock-er-up
+ + "I" Exec exec /home/jtimon/.fvwm/scripts/ensure-screensaver.sh
  + "I" Exec exec /usr/bin/xscreensaver-command -lock
 
 DestroyFunc Paste-a-roo

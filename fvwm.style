@@ -30,6 +30,7 @@ DestroyStyle "Fvwm*" "FvwmConsole" "Firefox" "*esktop" "FvwmBanner" "xcalc"
 Style "Fvwm*"           NoTitle, Sticky, WindowListSkip
 Style "FvwmConsole"     Title, Sticky, WindowListSkip, HandleWidth 3
 Style "Firefox"         Title, !Sticky
+Style "google-chrome"         Title, !Sticky
 Style "*esktop"         NoTitle, !Sticky, BorderWidth 1, HandleWidth 3 
 Style "FvwmBanner"      StaysOnTop
 Style "xcalc"           Icon xcalc.xpm, Colorset 7
