@@ -37,7 +37,7 @@ Colorset 4 fg Yellow,DGradient 500 LightBLue DarkBlue, SideColor blue, bg SlateB
 Colorset 5  fg MidnightBlue, bg white, hi rgb:05/46/a0, fgsh rgb:05/46/a0,  Shape  $[fvwm_theme_img]/menu_shape.xpm,  RootTransparent buffer, Tint white 85
 # Hilighted menu item
 #Colorset 6 fg white , bg  rgb:05/46/a0, hi  white, fgsh white
-Colorset 6 fg white , bg  rgb:05/46/a0, hi  white, fgsh white, RootTransparent buffer, Tint rgb:05/46/a0 35
+Colorset 6 fg midnightblue , bg  rgb:05/46/a0, hi  white, fgsh white, RootTransparent buffer, Tint rgb:05/46/a0 35
 
 
 # Calculator  (don't recall why i have this)

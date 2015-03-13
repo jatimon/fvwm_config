@@ -1,100 +1,100 @@
-*FvwmButtons: Font -adobe-helvetica-*-r-*-*-10-*-*-*-*-*-*-*
-*FvwmButtons: Geometry +0+0x200x45
-#*FvwmButtons: UseTips
-#*FvwmButtons: TipsColorset 9
-#*FvwmButtons: TipsDelay 0
-*FvwmButtons: Rows 3
-*FvwmButtons: Columns 7
-*FvwmButtons: Padding 0 0
-*FvwmButtons: (2x2, Swallow(UseOld,SwallowNew) "wmclock" `Exec /usr/bin/wmclock -12 -led \\#fefe56`)
-*FvwmButtons: (1x1, Icon rbomb.xpm,  Action(Mouse 1) Destroy)
-*FvwmButtons: (1x1, Icon crystalsvg/22x22/apps/knotes.png         Action(Mouse 1) Exec "" /usr/local/bin/postit.pl)         Action(Mouse 2) Exec "" xlock -mode random)
-*FvwmButtons: (1x1, Icon gnome/22x22/apps/web-browser.png         Action(Mouse 1)  Exec ""  /usr/bin/firefox)         Action(Mouse 2)  Exec ""  /usr/bin/google-chrome)         Action(Mouse 3)  Exec "" /usr/bin/ssh -X -l root jump1001.network.rim.net firefox -no-remote )
-*FvwmButtons: (1x1, Swallow(UseOld,SwallowNew) "stalonetray" `Exec exec stalonetray `)
-*FvwmButtons: (1x1, Swallow(UseOld,SwallowNew) "gweather" `Exec exec /usr/lib/gnome-applets/gweather-applet-2 --name gweather`)
-*FvwmButtons: (1x1, Icon slick/22x22/filesystems/server.png         Action(Mouse 1) "exec xterm  -sb -si -sk -sl 15000 -bg \#010101 -fg tan -cr HotPink -title 'tom03' -e /usr/bin/ssh -X -l jtimon tom03 ",         Action(Mouse 2) "exec xterm  -sb -si -sk -sl 15000 -bg black -fg yellow -cr HotPink -title 'Imaging' -e /usr/bin/ssh -X -l jtimon pxe03.rim.net",         Action(Mouse 3) "exec xterm  -sb -si -sk -sl 15000 -bg black -fg green -cr HotPink -title 'jump1001'  -e /usr/bin/ssh -X -l root jump1001.network.rim.net ")
-#*FvwmButtons: (1x1, Icon slick/22x22/filesystems/server.png,, TipsLabel "Left -- tom03, Middle -- Imaging, Right -- jump1001"         #Action(Mouse 1) "exec xterm -ls -s -sl 15000 -j -aw -sb -bg black -fg white -cr HotPink -title 'tom03' -e /usr/bin/ssh -X -l jtimon tom03 ",         #Action(Mouse 2) "exec xterm -ls -s -sl 15000 -j -aw -sb -bg black -fg yellow -cr HotPink -title 'Imaging' -e /usr/bin/ssh -X -l jtimon pxe03.rim.net",         #Action(Mouse 3) "exec xterm -ls -s -sl 15000 -j -aw -sb -bg black -fg green -cr HotPink -title 'jump1001'  -e /usr/bin/ssh -X -l root jump1001.network.rim.net ")
-# Action(Mouse 1) "exec /usr/X11R6/bin/rdesktop -u jtimon -d rim.net -g 1680x1050 -b -K -a 24 -x l -C -r sound:remote -0 it0000000043214.rim.net ",
-*FvwmButtons: (1x1, Icon kids/22x22/apps/display.png         Action(Mouse 1) "exec rdesktop -u jtimon -d rim.net -g 1680x1050 -E -K -a 24 -x b -z -0 ci0000001493729.rim.net",         Action(Mouse 2) "exec  /usr/NX/bin/nxclient",         Action(Mouse 3) "exec rdesktop -u Administrator -d rim.net -g 1024x768  -b -K -a 24 -x l  -C jump1002.network.rim.net")
-*FvwmButtons: (1x1, Icon Tango/22x22/apps/openterm.png         Action(Mouse 1) "exec xterm   -sb -si -sk -sl 15000 -bg black -fg white -geometry 80x25 -title 'Xterm - John' ",         Action(Mouse 2) "exec xterm   -sb -si -sk -sl 15000 -bg black -fg white -geometry 80x25 -title 'Xterm - Work' -e  /usr/bin/ssh -X jtimon@jtimon-lx ",         Action(Mouse 3) "exec xterm   -sb -si -sk -sl 15000 -bg black -fg white -geometry 80x50 -title 'Xterm - John' ")
-*FvwmButtons: (7x1, Swallow(UseOld,SwallowNew)  FvwmPager 'Module FvwmPager')
-Module FvwmButtons
-MenuStyle *    PopupImmediately, PopdownImmediately, PopupOffset 0 50
-MenuStyle *    PopupImmediately, PopdownImmediately, PopupOffset 0 75
-Load
-help
-?
-DestroyMenu /Applications/fvwm/Applications/Utilities/Printing
-AddToMenu /Applications/fvwm/Applications/Utilities/Printing
-+ "%kdeprintfax.png%$[gt.kdeprintfax]" Exec exec "/usr/share/fvwm-crystal/fvwm/Applications/Utilities/Printing/~kdeprintfax~kdeprintfax"
-+ "%kjobviewer.png%$[gt.kjobviewer]" Exec exec "/usr/share/fvwm-crystal/fvwm/Applications/Utilities/Printing/~kjobviewer~kjobviewer"
-+ "%kprinter.png%$[gt.kprinter]" Exec exec "/usr/share/fvwm-crystal/fvwm/Applications/Utilities/Printing/~kprinter~kprinter"
-DestroyMenu /Applications/fvwm/Applications/Utilities/Printing
-AddToMenu /Applications/fvwm/Applications/Utilities/Printing
-+ "%kdeprintfax.png%$[gt.kdeprintfax]" Exec exec "/usr/share/fvwm-crystal/fvwm/Applications/Utilities/Printing/~kdeprintfax~kdeprintfax"
-+ "%kjobviewer.png%$[gt.kjobviewer]" Exec exec "/usr/share/fvwm-crystal/fvwm/Applications/Utilities/Printing/~kjobviewer~kjobviewer"
-+ "%kprinter.png%$[gt.kprinter]" Exec exec "/usr/share/fvwm-crystal/fvwm/Applications/Utilities/Printing/~kprinter~kprinter"
-AddToMenu "Entertainment" /Applications/fvwm/Applications/Utilities/Printing
-DestroyMenu /Applications/fvwm/Applications/Utilities/Printing
-AddToMenu /Applications/fvwm/Applications/Utilities/Printing
-+ "%kdeprintfax.png%$[gt.kdeprintfax]" Exec exec "/usr/share/fvwm-crystal/fvwm/Applications/Utilities/Printing/~kdeprintfax~kdeprintfax"
-+ "%kjobviewer.png%$[gt.kjobviewer]" Exec exec "/usr/share/fvwm-crystal/fvwm/Applications/Utilities/Printing/~kjobviewer~kjobviewer"
-+ "%kprinter.png%$[gt.kprinter]" Exec exec "/usr/share/fvwm-crystal/fvwm/Applications/Utilities/Printing/~kprinter~kprinter"
-DestroyMenu /Applications/fvwm/Applications/Utilities/Printing
-AddToMenu /Applications/fvwm/Applications/Utilities/Printing
-+ "%kdeprintfax.png%$[gt.kdeprintfax]" Exec exec "/usr/share/fvwm-crystal/fvwm/Applications/Utilities/Printing/~kdeprintfax~kdeprintfax"
-+ "%kjobviewer.png%$[gt.kjobviewer]" Exec exec "/usr/share/fvwm-crystal/fvwm/Applications/Utilities/Printing/~kjobviewer~kjobviewer"
-+ "%kprinter.png%$[gt.kprinter]" Exec exec "/usr/share/fvwm-crystal/fvwm/Applications/Utilities/Printing/~kprinter~kprinter"
-DestroyMenu /Applications/fvwm/Applications/Utilities/Printing
-AddToMenu /Applications/fvwm/Applications/Utilities/Printing
-+ "%kdeprintfax.png%$[gt.kdeprintfax]" Exec exec "/usr/share/fvwm-crystal/fvwm/Applications/Utilities/Printing/~kdeprintfax~kdeprintfax"
-+ "%kjobviewer.png%$[gt.kjobviewer]" Exec exec "/usr/share/fvwm-crystal/fvwm/Applications/Utilities/Printing/~kjobviewer~kjobviewer"
-+ "%kprinter.png%$[gt.kprinter]" Exec exec "/usr/share/fvwm-crystal/fvwm/Applications/Utilities/Printing/~kprinter~kprinter"
-DestroyMenu /Applications/fvwm/Applications/Utilities/Printing
-AddToMenu /Applications/fvwm/Applications/Utilities/Printing
-+ "%kdeprintfax.png%$[gt.kdeprintfax]" Exec exec "/usr/share/fvwm-crystal/fvwm/Applications/Utilities/Printing/~kdeprintfax~kdeprintfax"
-+ "%kjobviewer.png%$[gt.kjobviewer]" Exec exec "/usr/share/fvwm-crystal/fvwm/Applications/Utilities/Printing/~kjobviewer~kjobviewer"
-+ "%kprinter.png%$[gt.kprinter]" Exec exec "/usr/share/fvwm-crystal/fvwm/Applications/Utilities/Printing/~kprinter~kprinter"
-DestroyMenu /Applications/fvwm/Applications/Utilities/Printing
-DestroyMenu /Applications/fvwm/Applications
-AddToMenu /Applications/fvwm/Applications
-+ "%Games.png%$[gt.Games]" Popup /Applications/fvwm/Applications/Games
-DestroyMenu /Applications/fvwm/Applications/Games
-AddToMenu /Applications/fvwm/Applications/Games
-+ "%Action Games.png%$[gt.Action Games]" Popup /Applications/fvwm/Applications/Games/Action_Games
-+ "%Block Games.png%$[gt.Block Games]" Popup /Applications/fvwm/Applications/Games/Block_Games
-+ "%Arcade Games.png%$[gt.Arcade Games]" Popup /Applications/fvwm/Applications/Games/Arcade_Games
-+ "%Board Games.png%$[gt.Board Games]" Popup /Applications/fvwm/Applications/Games/Board_Games
-+ "%Card Games.png%$[gt.Card Games]" Popup /Applications/fvwm/Applications/Games/Card_Games
-+ "%Logic Games.png%$[gt.Logic Games]" Popup /Applications/fvwm/Applications/Games/Logic_Games
-+ "%Role Playing.png%$[gt.Role Playing]" Popup /Applications/fvwm/Applications/Games/Role_Playing
-+ "%Shooters.png%$[gt.Shooters]" Popup /Applications/fvwm/Applications/Games/Shooters
-+ "%Strategy Games.png%$[gt.Strategy Games]" Popup /Applications/fvwm/Applications/Games/Strategy_Games
-+ "" Nop
-+ "%blinKen.png%$[gt.blinKen]" Exec exec "/usr/share/fvwm-crystal/fvwm/Applications/20~Games/~blinken~blinKen"
-+ "" Nop
-+ "%DOSBox.png%$[gt.DOSBox]" Exec exec "/usr/share/fvwm-crystal/fvwm/Applications/20~Games/Emulators/~dosbox~DOSBox"
-+ "" Nop
-+ "%KTuberling.png%$[gt.KTuberling]" Exec exec "/usr/share/fvwm-crystal/fvwm/Applications/20~Games/Kids_Games/~ktuberling~KTuberling"
-AddToMenu "Entertainment" /Applications/fvwm/Applications/Games
-AddToMenu "Entertainment" /Applications/fvwm/Applications/Games Title
-DestroyMenu /Applications/fvwm/Applications/Games/Action_Games
-AddToMenu /Applications/fvwm/Applications/Games/Action_Games
-+ "%Circus Linux.png%$[gt.Circus Linux]" Exec exec "/usr/share/fvwm-crystal/fvwm/Applications/20~Games/20~Action_Games/25~circuslinux~Circus_Linux"
-+ "%XQF.png%$[gt.XQF]" Exec exec "/usr/share/fvwm-crystal/fvwm/Applications/20~Games/20~Action_Games/20~xqf~XQF"
-+ "%Enemy Territory.png%$[gt.Enemy Territory]" Exec exec "/usr/share/fvwm-crystal/fvwm/Applications/20~Games/20~Action_Games/18~et~Enemy_Territory"
-+ "%Q3A: Urban Terror.png%$[gt.Q3A: Urban Terror]" Exec exec "/usr/share/fvwm-crystal/fvwm/Applications/20~Games/20~Action_Games/18~q3ut3~Q3A:_Urban_Terror"
-+ "%DOOM III.png%$[gt.DOOM III]" Exec exec "/usr/share/fvwm-crystal/fvwm/Applications/20~Games/20~Action_Games/15~doom3~DOOM_III"
-+ "%Quake III Arena.png%$[gt.Quake III Arena]" Exec exec "/usr/share/fvwm-crystal/fvwm/Applications/20~Games/20~Action_Games/15~quake3~Quake_III_Arena"
-+ "%Quake IV.png%$[gt.Quake IV]" Exec exec "/usr/share/fvwm-crystal/fvwm/Applications/20~Games/20~Action_Games/15~quake4~Quake_IV"
-+ "%Unreal Tournament 2003.png%$[gt.Unreal Tournament 2003]" Exec exec "/usr/share/fvwm-crystal/fvwm/Applications/20~Games/20~Action_Games/15~ut2003~Unreal_Tournament_2003"
-+ "%Unreal Tournament 2004.png%$[gt.Unreal Tournament 2004]" Exec exec "/usr/share/fvwm-crystal/fvwm/Applications/20~Games/20~Action_Games/15~ut2004~Unreal_Tournament_2004"
-+ "%LxDoom.png%$[gt.LxDoom]" Exec exec "/usr/share/fvwm-crystal/fvwm/Applications/20~Games/20~Action_Games/~lxdoom~LxDoom"
-+ "%Nexuiz.png%$[gt.Nexuiz]" Exec exec "/usr/share/fvwm-crystal/fvwm/Applications/20~Games/20~Action_Games/~nexuiz~Nexuiz"
-+ "%Quake II.png%$[gt.Quake II]" Exec exec "/usr/share/fvwm-crystal/fvwm/Applications/20~Games/20~Action_Games/~quake2~Quake_II"
-+ "%RTCW Multiplayer.png%$[gt.RTCW Multiplayer]" Exec exec "/usr/share/fvwm-crystal/fvwm/Applications/20~Games/20~Action_Games/~wolfmp~RTCW_Multiplayer"
-+ "%Return to Castle Wolfenstein.png%$[gt.Return to Castle Wolfenstein]" Exec exec "/usr/share/fvwm-crystal/fvwm/Applications/20~Games/20~Action_Games/~wolfsp~Return_to_Castle_Wolfenstein"
-+ "%Unreal Tournament.png%$[gt.Unreal Tournament]" Exec exec "/usr/share/fvwm-crystal/fvwm/Applications/20~Games/20~Action_Games/~ut~Unreal_Tournament"
-+ "%bzFlag.png%$[gt.bzFlag]" Exec exec "/usr/share/fvwm-crystal/fvwm/Applications/20~Games/20~Action_Games/~bzflag~bzFlag"
-exec "/usr/share/fvwm-crystal/fvwm/Applications/20~Games/20~Action_Games/~bzflag~bzFlag"
-Exec exec "/usr/share/fvwm-crystal/fvwm/Applications/20~Games/20~Action_Games/~bzflag~bzFlag"
+*FvwmPager: Back DarkGrey
+*FvwmPager: Fore Black
+#*FvwmPager: Fore DarkGrey4
+*FvwmPager: Font none
+*FvwmPager: Hilight SlateBlue4
+*FvwmPager: Balloons
+*FvwmPager: BalloonColorset * 9
+*FvwmPager: SolidSeparators
+*FvwmPager: SmallFont -*-times-medium-r-*-*-*-80-*-*-*-*-*-*
+*FvwmPager: NoStartIconic
+*FvwmPager: Colorset * 8
+*FvwmPager: ActiveColorset * 6
+*FvwmPager: Geometry 519+1032
+Module FvwmPager
+Destroy
+DestroyModuleConfig FvwmPager: *
+*FvwmPager: DeskTopScale 40
+#PagerBackColor         #5c54c0
+#! PagerForeColor               #f0ecb6 [deleted]
+#*FvwmPager: Back VGradient 100 black white
+*FvwmPager: Back DarkGrey
+*FvwmPager: Fore Black
+#*FvwmPager: Fore DarkGrey4
+*FvwmPager: Font none
+*FvwmPager: Hilight SlateBlue4
+*FvwmPager: Balloons
+*FvwmPager: BalloonColorset * 9
+*FvwmPager: SolidSeparators
+*FvwmPager: SmallFont -*-times-medium-r-*-*-*-80-*-*-*-*-*-*
+*FvwmPager: NoStartIconic
+*FvwmPager: Colorset * 8
+*FvwmPager: ActiveColorset * 6
+*FvwmPager: Geometry +519+1032
+Module FvwmPager
+Destroy
+DestroyModuleConfig FvwmPager: *
+*FvwmPager: DeskTopScale 40
+#PagerBackColor         #5c54c0
+#! PagerForeColor               #f0ecb6 [deleted]
+#*FvwmPager: Back VGradient 100 black white
+*FvwmPager: Back DarkGrey
+*FvwmPager: Fore Black
+#*FvwmPager: Fore DarkGrey4
+*FvwmPager: Font none
+*FvwmPager: Hilight SlateBlue4
+*FvwmPager: Balloons
+*FvwmPager: BalloonColorset * 9
+*FvwmPager: SolidSeparators
+*FvwmPager: SmallFont -*-times-medium-r-*-*-*-80-*-*-*-*-*-*
+*FvwmPager: NoStartIconic
+*FvwmPager: Colorset * 8
+*FvwmPager: ActiveColorset * 6
+*FvwmPager: Geometry +519+1022
+Module FvwmPager
+Colorset 6 fg midnightblue , bg  rgb:05/46/a0, hi  white, fgsh white
+Destroy
+DestroyModuleConfig FvwmPager: *
+*FvwmPager: DeskTopScale 40
+#PagerBackColor         #5c54c0
+#! PagerForeColor               #f0ecb6 [deleted]
+#*FvwmPager: Back VGradient 100 black white
+*FvwmPager: Back DarkGrey
+*FvwmPager: Fore Black
+#*FvwmPager: Fore DarkGrey4
+*FvwmPager: Font none
+*FvwmPager: Hilight SlateBlue4
+*FvwmPager: Balloons
+*FvwmPager: BalloonColorset * 9
+*FvwmPager: SolidSeparators
+*FvwmPager: SmallFont -*-times-medium-r-*-*-*-80-*-*-*-*-*-*
+*FvwmPager: NoStartIconic
+*FvwmPager: Colorset * 8
+*FvwmPager: ActiveColorset * 6
+*FvwmPager: Geometry +519+1022
+Module FvwmPager
+CleanupColorsets
+Colorset 6 fg midnightblue , bg  rgb:05/46/a0, hi  white, fgsh white, RootTransparent buffer, Tint rgb: 05/46/a0 35
+Destroy
+DestroyModuleConfig FvwmPager: *
+*FvwmPager: DeskTopScale 40
+#PagerBackColor         #5c54c0
+#! PagerForeColor               #f0ecb6 [deleted]
+#*FvwmPager: Back VGradient 100 black white
+*FvwmPager: Back DarkGrey
+*FvwmPager: Fore Black
+#*FvwmPager: Fore DarkGrey4
+*FvwmPager: Font none
+*FvwmPager: Hilight SlateBlue4
+*FvwmPager: Balloons
+*FvwmPager: BalloonColorset * 9
+*FvwmPager: SolidSeparators
+*FvwmPager: SmallFont -*-times-medium-r-*-*-*-80-*-*-*-*-*-*
+*FvwmPager: NoStartIconic
+*FvwmPager: Colorset * 8
+*FvwmPager: ActiveColorset * 6
+*FvwmPager: Geometry +519+1022
+Module FvwmPager
+Module FvwmPager
+Module FvwmPager
+Read .fvwm/fvwm.keys
