@@ -109,6 +109,7 @@ DestroyFunc window_rearrange
 AddToFunc "window_rearrange" "C" Module FvwmRearrange -tile -mn 2 
 +               "D" Module FvwmRearrange -tile  -h -mn 2 
 +               "M" Module FvwmRearrange -cascade -incx 2 -incy 2
++               "H" Module FvwmRearrange -tile -v 
 
 
 

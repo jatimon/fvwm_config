@@ -98,8 +98,6 @@ DeskTopSize 9x1
 #
 # Colorsets
 Read fvwm.colorsets
-# Pager Config
-Read fvwm.pager
 # FvwmButtons Config
 # Read fvwm.buttons
 # Menu Config
@@ -112,6 +110,10 @@ Read fvwm.keys
 Read fvwm.style
 # Decor settings
 Read fvwm.decor
+# Pager Config
+Read fvwm.pager
+
+Module FvwmPager
 
 
 ## Button 4 -- Maximize

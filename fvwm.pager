@@ -33,3 +33,4 @@ DestroyModuleConfig FvwmPager: *
 *FvwmPager: NoStartIconic
 *FvwmPager: Colorset * 8
 *FvwmPager: ActiveColorset * 6
+*FvwmPager: Geometry 400x28+250-1

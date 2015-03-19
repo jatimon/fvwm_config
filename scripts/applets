@@ -5,7 +5,7 @@
 # nm-applet
 # mate-power-manager
 
-for I in mate-panel mate-volume-control-applet nm-applet mate-power-manager krb5-auth-dialog 
+for I in mate-panel mate-volume-control-applet nm-applet mate-power-manager krb5-auth-dialog  hexchat
 do
 	pid=$(pidof $I)
 	if [ -z $pid ]

@@ -1,71 +1,3 @@
-*FvwmPager: Back DarkGrey
-*FvwmPager: Fore Black
-#*FvwmPager: Fore DarkGrey4
-*FvwmPager: Font none
-*FvwmPager: Hilight SlateBlue4
-*FvwmPager: Balloons
-*FvwmPager: BalloonColorset * 9
-*FvwmPager: SolidSeparators
-*FvwmPager: SmallFont -*-times-medium-r-*-*-*-80-*-*-*-*-*-*
-*FvwmPager: NoStartIconic
-*FvwmPager: Colorset * 8
-*FvwmPager: ActiveColorset * 6
-*FvwmPager: Geometry 519+1032
-Module FvwmPager
-Destroy
-DestroyModuleConfig FvwmPager: *
-*FvwmPager: DeskTopScale 40
-#PagerBackColor         #5c54c0
-#! PagerForeColor               #f0ecb6 [deleted]
-#*FvwmPager: Back VGradient 100 black white
-*FvwmPager: Back DarkGrey
-*FvwmPager: Fore Black
-#*FvwmPager: Fore DarkGrey4
-*FvwmPager: Font none
-*FvwmPager: Hilight SlateBlue4
-*FvwmPager: Balloons
-*FvwmPager: BalloonColorset * 9
-*FvwmPager: SolidSeparators
-*FvwmPager: SmallFont -*-times-medium-r-*-*-*-80-*-*-*-*-*-*
-*FvwmPager: NoStartIconic
-*FvwmPager: Colorset * 8
-*FvwmPager: ActiveColorset * 6
-*FvwmPager: Geometry +519+1032
-Module FvwmPager
-Destroy
-DestroyModuleConfig FvwmPager: *
-*FvwmPager: DeskTopScale 40
-#PagerBackColor         #5c54c0
-#! PagerForeColor               #f0ecb6 [deleted]
-#*FvwmPager: Back VGradient 100 black white
-*FvwmPager: Back DarkGrey
-*FvwmPager: Fore Black
-#*FvwmPager: Fore DarkGrey4
-*FvwmPager: Font none
-*FvwmPager: Hilight SlateBlue4
-*FvwmPager: Balloons
-*FvwmPager: BalloonColorset * 9
-*FvwmPager: SolidSeparators
-*FvwmPager: SmallFont -*-times-medium-r-*-*-*-80-*-*-*-*-*-*
-*FvwmPager: NoStartIconic
-*FvwmPager: Colorset * 8
-*FvwmPager: ActiveColorset * 6
-*FvwmPager: Geometry +519+1022
-Module FvwmPager
-Colorset 6 fg midnightblue , bg  rgb:05/46/a0, hi  white, fgsh white
-Destroy
-DestroyModuleConfig FvwmPager: *
-*FvwmPager: DeskTopScale 40
-#PagerBackColor         #5c54c0
-#! PagerForeColor               #f0ecb6 [deleted]
-#*FvwmPager: Back VGradient 100 black white
-*FvwmPager: Back DarkGrey
-*FvwmPager: Fore Black
-#*FvwmPager: Fore DarkGrey4
-*FvwmPager: Font none
-*FvwmPager: Hilight SlateBlue4
-*FvwmPager: Balloons
-*FvwmPager: BalloonColorset * 9
 *FvwmPager: SolidSeparators
 *FvwmPager: SmallFont -*-times-medium-r-*-*-*-80-*-*-*-*-*-*
 *FvwmPager: NoStartIconic
@@ -98,3 +30,71 @@ Module FvwmPager
 Module FvwmPager
 Module FvwmPager
 Read .fvwm/fvwm.keys
+Module FvwmPager
+Module FvwmRearrange -tile -animate
+Module FvwmRearrange -tile -h -a
+Module FvwmRearrange -tile -a -v
+Module FvwmRearrange -tile -a -v
+Module FvwmPager
+DestroyModuleConfig FvwmPager: *
+*FvwmPager: DeskTopScale 40
+#PagerBackColor         #5c54c0
+#! PagerForeColor               #f0ecb6 [deleted]
+#*FvwmPager: Back VGradient 100 black white
+*FvwmPager: Back DarkGrey
+*FvwmPager: Fore Black
+#*FvwmPager: Fore DarkGrey4
+*FvwmPager: Font none
+*FvwmPager: Hilight SlateBlue4
+*FvwmPager: Balloons
+*FvwmPager: BalloonColorset * 9
+*FvwmPager: SolidSeparators
+*FvwmPager: SmallFont -*-times-medium-r-*-*-*-80-*-*-*-*-*-*
+*FvwmPager: NoStartIconic
+*FvwmPager: Colorset * 8
+*FvwmPager: ActiveColorset * 6
+*FvwmPager: Geometry +250-2
+Destroy
+Module FvwmPager
+Destroy
+DestroyModuleConfig FvwmPager: *
+*FvwmPager: DeskTopScale 40
+#PagerBackColor         #5c54c0
+#! PagerForeColor               #f0ecb6 [deleted]
+#*FvwmPager: Back VGradient 100 black white
+*FvwmPager: Back DarkGrey
+*FvwmPager: Fore Black
+#*FvwmPager: Fore DarkGrey4
+*FvwmPager: Font none
+*FvwmPager: Hilight SlateBlue4
+*FvwmPager: Balloons
+*FvwmPager: BalloonColorset * 9
+*FvwmPager: SolidSeparators
+*FvwmPager: SmallFont -*-times-medium-r-*-*-*-80-*-*-*-*-*-*
+*FvwmPager: NoStartIconic
+*FvwmPager: Colorset * 8
+*FvwmPager: ActiveColorset * 6
+*FvwmPager: Geometry 200x30+250-1
+Module FvwmPager
+Destroy
+DestroyModuleConfig FvwmPager: *
+*FvwmPager: DeskTopScale 40
+#PagerBackColor         #5c54c0
+#! PagerForeColor               #f0ecb6 [deleted]
+#*FvwmPager: Back VGradient 100 black white
+*FvwmPager: Back DarkGrey
+*FvwmPager: Fore Black
+#*FvwmPager: Fore DarkGrey4
+*FvwmPager: Font none
+*FvwmPager: Hilight SlateBlue4
+*FvwmPager: Balloons
+*FvwmPager: BalloonColorset * 9
+*FvwmPager: SolidSeparators
+*FvwmPager: SmallFont -*-times-medium-r-*-*-*-80-*-*-*-*-*-*
+*FvwmPager: NoStartIconic
+*FvwmPager: Colorset * 8
+*FvwmPager: ActiveColorset * 6
+*FvwmPager: Geometry 400x29+250-1
+~                                                                                            
+Module FvwmPager
+Module FvwmPager

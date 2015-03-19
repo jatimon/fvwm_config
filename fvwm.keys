@@ -75,9 +75,9 @@ Key F10          A       A       Popup "Window Ops"
 #Key Prior      R       N       Scroll -100000 0
 
 # set up easy key strokes to open Xterm
-Key t 					A 			C 			Exec xfce4-terminal # ctrl-t in any context will open xterm
+Key t 					A 			C 			Exec exec xterm -sb -si -sk -s -j -aw -sl 1500000 # ctrl-t in any context will open xterm
 key (xfce4-terminal) t A CS --
-Key t A CS Exec exec xfce4-terminal -e '/usr/bin/ssh -X sb'
+Key t A CS Exec exec xterm -sb -si -sk -sl 1500000 -cr HotPink -s -j -aw  -title 'Xterm Sandbox' -e '/usr/bin/ssh -X sb'
 
 
 # set up ssh session to devserver over Master Session (hopefully it exists)
