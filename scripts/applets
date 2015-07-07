@@ -5,7 +5,7 @@
 # nm-applet
 # mate-power-manager
 
-for I in mate-panel mate-volume-control-applet nm-applet mate-power-manager krb5-auth-dialog  hexchat
+for I in mate-volume-control-applet nm-applet mate-power-manager krb5-auth-dialog hexchat albert
 do
 	pid=$(pidof $I)
 	if [ -z $pid ]
@@ -18,4 +18,13 @@ do
 	fi
 done
 
+pid=$(pidof autocutsel | wc -w)
 
+if [ $pid != 2 ]
+then
+	# kill autocutsel and start fresh
+	pkill -9 -f autocutsel
+	autocutsel -fork
+	autocutsel -selection PRIMARY -fork
+fi
+	

@@ -25,12 +25,13 @@ DestroyModuleConfig FvwmButtons: *
 *FvwmButtons: Colorset 15
 *FvwmButtons: ActiveColorset 16
 *FvwmButtons: Font -adobe-helvetica-*-r-*-*-10-*-*-*-*-*-*-*
-*FvwmButtons: Geometry +0+0x200x45
+#*FvwmButtons: Geometry +0+0x200x45
+*FvwmButtons: Geometry +0+0x183x86
 #*FvwmButtons: UseTips
 #*FvwmButtons: TipsColorset 9
 #*FvwmButtons: TipsDelay 0
 *FvwmButtons: Rows 3
-*FvwmButtons: Columns 7
+*FvwmButtons: Columns 6
 *FvwmButtons: Padding 0 0
 *FvwmButtons: (2x2, Swallow(UseOld,SwallowNew) "wmclock" `Exec /usr/bin/wmclock -12 -led \\#fefe56`)
 *FvwmButtons: (1x1, Icon rbomb.xpm,  Action(Mouse 1) Destroy)
@@ -46,13 +47,12 @@ DestroyModuleConfig FvwmButtons: *
         #Action(Mouse 3) "exec xterm -ls -s -sl 15000 -j -aw -sb -bg black -fg green -cr HotPink -title 'jump1001'  -e /usr/bin/ssh -X -l root jump1001.network.rim.net ")
 # Action(Mouse 1) "exec /usr/X11R6/bin/rdesktop -u jtimon -d rim.net -g 1680x1050 -b -K -a 24 -x l -C -r sound:remote -0 it0000000043214.rim.net ",
 *FvwmButtons: (1x1, Icon kids/22x22/apps/display.png\
-        Action(Mouse 1) "exec /opt/Citrix/ICAClient/wfica Downloads/outlook.ica",\
-        Action(Mouse 2) "exec  /usr/NX/bin/nxclient",\
-        Action(Mouse 3) "exec rdesktop  -b -K -a 24 -x l -C -u john -g 1280x1024 jtimon-xp")
-*FvwmButtons: (1x1, Icon Tango/22x22/apps/openterm.png\
-        Action(Mouse 1) "exec xterm   -sb -si -sk -sl 15000 -bg black -fg white -geometry 80x25 -title 'Xterm - John' ",\
-        Action(Mouse 2) "exec xterm   -sb -si -sk -sl 15000 -bg black -fg white -geometry 80x25 -title 'Xterm - Work' -e  /usr/bin/ssh -X jtimon@jtimon-lx ",\
-        Action(Mouse 3) "exec xterm   -sb -si -sk -sl 15000 -bg black -fg white -geometry 80x50 -title 'Xterm - John' ")
-*FvwmButtons: (5x1, Swallow(UseOld,SwallowNew,Kill, Respawn) "stalonetray" `Exec exec stalonetray`)
-*FvwmButtons: (7x1, Swallow(UseOld,SwallowNew)  FvwmPager 'Module FvwmPager')
+        Action(Mouse 1) "exec /opt/Citrix/ICAClient/wfica $HOME/citrix/outlook.ica",\
+        Action(Mouse 3) "exec /opt/Citrix/ICAClient/wfica $HOME/citrix/firefox_with_java.ica")
+#*FvwmButtons: (1x1, Icon Tango/22x22/apps/openterm.png\
+#Action(Mouse 1) "exec xterm   -sb -si -sk -sl 15000 -bg black -fg white -geometry 80x25 -title 'Xterm - John' ",\
+#Action(Mouse 2) "exec xterm   -sb -si -sk -sl 15000 -bg black -fg white -geometry 80x25 -title 'Xterm - Work' -e  /usr/bin/ssh -X jtimon@jtimon-lx ",\
+#Action(Mouse 3) "exec xterm   -sb -si -sk -sl 15000 -bg black -fg white -geometry 80x50 -title 'Xterm - John' ")
+*FvwmButtons: (4x1, Swallow(UseOld, SwallowNew) "stalonetray" `Exec exec stalonetray`)
+*FvwmButtons: (6x1, Swallow(UseOld,SwallowNew)  FvwmPager 'Module FvwmPager')
 

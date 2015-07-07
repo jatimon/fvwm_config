@@ -79,6 +79,7 @@ ImagePath   /usr/include/X11/bitmaps:/usr/share/X11/fvwm2/pixmaps/:$[fvwm_icons]
 # Now the fonts - one for menus, another for window titles, another for icons
 WindowFont		-*-helvetica-medium-r-normal-*-18-*-*-*-*-*-*-*
 IconFont		-adobe-helvetica-medium-r-*-*-11-*-*-*-*-*-*-*
+EwmhBaseStruts 2 2 2 2
 
 OpaqueMoveSize 100
 EdgeScroll 100 100
@@ -88,7 +89,7 @@ EdgeResistance 180
 Style * EdgeMoveDelay 180
 Style * EdgeMoveResistance 0
 
-EWMHUseStackingOrderHints
+#EWMHUseStackingOrderHints
 
 DeskTopSize 9x1
 
@@ -99,7 +100,7 @@ DeskTopSize 9x1
 # Colorsets
 Read fvwm.colorsets
 # FvwmButtons Config
-# Read fvwm.buttons
+Read fvwm.buttons
 # Menu Config
 Read fvwm.menu
 # Complex Functions
@@ -112,9 +113,6 @@ Read fvwm.style
 Read fvwm.decor
 # Pager Config
 Read fvwm.pager
-
-Module FvwmPager
-
 
 ## Button 4 -- Maximize
 #ButtonStyle 4 4 50x30@1 70x70@0 30x70@0 50x30@1
@@ -217,8 +215,7 @@ Mouse 3         W       M       RaiseLower
 *FvwmWinListUseSkipList
 *FvwmWinListGeometry +0-1
                                       
-
-
-
 AddToFunc StartFunction "I" Module FvwmCommandS
++ "I" Exec exec /home/jtimon/.fvwm/rnd_pic.py
+
 

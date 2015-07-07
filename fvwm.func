@@ -32,27 +32,24 @@
 
 # I have removed Buttons in places of mate-panel
 #DestroyFunc InitFunction
-#AddToFunc "InitFunction" "I" Module FvwmButtons
-AddToFunc "InitFunction"  "I" Exec exec /home/jtimon/.fvwm/rnd_pic.py
-+              "I" Function MakeBackgroundMenu
-+              "I" Exec exec /home/jtimon/.fvwm/scripts/applets
+AddToFunc "InitFunction" "I" Module FvwmButtons
+#+							"I" Exec exec /home/jtimon/.fvwm/rnd_pic.py
++             "I" Function MakeBackgroundMenu
++             "I" Exec exec /home/jtimon/.fvwm/scripts/applets
 #HACK+							 "I" Exec exec start drop box here HACK
 
 
 #DestroyFunc RestartFunction
 # I have removed Buttons in places of mate-panel
-#AddToFunc "RestartFunction" "I" Module FvwmButtons
-AddToFunc "RestartFunction"  "I" Exec exec /home/jtimon/.fvwm/rnd_pic.py
+AddToFunc "RestartFunction" "I" Module FvwmButtons
+#+              "I" Exec exec /home/jtimon/.fvwm/rnd_pic.py
 +              "I" Module FvwmConsole
 +              "I" Function MakeBackgroundMenu
 +              "I" Exec exec /home/jtimon/.fvwm/scripts/applets
 
 
 DestroyFunc Bail
-AddToFunc "Bail" "I" Exec exec /sbin/init 0
-
-
-
+AddToFunc "Bail" "I" Exec exec sudo /sbin/init 0
 
 #
 # Complex Fucntions for Window Manipulation
@@ -194,6 +191,16 @@ AddToFunc Paste-a-roo-2
  + "I" Exec exec  /usr/local/bin/crikey -s 1 "export 'PS1=\`hostname | cut -f1 -d.\` -> ' EDITOR=vi VISUAL=vi\n"
  + "I" Exec exec  /usr/local/bin/crikey -s 2 'echo -e \\033c \n'
  + "I" Exec echo Nop
+
+# pop up a *term and focus
+DestroyFunc xtme
+AddToFunc xtme 
++ "I" Iconify Off
++ "I" Exec exec xterm -sb -si -sk -s -j -aw -sl 1500000
++ "I" Focus
++ "I" Raise
++ "I" WarpToWindow 50 50
++ "I" Exec echo Nop
 
 
 # 

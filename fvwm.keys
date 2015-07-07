@@ -75,9 +75,24 @@ Key F10          A       A       Popup "Window Ops"
 #Key Prior      R       N       Scroll -100000 0
 
 # set up easy key strokes to open Xterm
-Key t 					A 			C 			Exec exec xterm -sb -si -sk -s -j -aw -sl 1500000 # ctrl-t in any context will open xterm
-key (xfce4-terminal) t A CS --
-Key t A CS Exec exec xterm -sb -si -sk -sl 1500000 -cr HotPink -s -j -aw  -title 'Xterm Sandbox' -e '/usr/bin/ssh -X sb'
+#Key t 					A 			C 			Exec exec xterm -sb -si -sk -s -j -aw -sl 1500000 # ctrl-t in any context will open xterm
+Key t 					A 			C 			Exec exec /usr/bin/mate-terminal --title "Xterm"
+#Key t 					A 			C 			Function xtme
+key (Google-chrome) t A C --
+#Key t A CS Exec exec xterm -sb -si -sk -sl 1500000 -cr HotPink -s -j -aw  -title 'Xterm Sandbox' -e '/usr/bin/ssh -X sb'
+Key t A CS Exec exec /usr/bin/mate-terminal --profile=devserver --title 'Xterm Sandbox' -e '/usr/bin/ssh -X sb'
+Key h A CS Exec exec /usr/bin/mate-terminal --profile=devserver --title 'Xterm Sandbox (MOSH)' -e '/usr/bin/mosh sb'
+Key F1 A CS Exec exec /usr/local/bin/toggle_display eDP1
+Key F2 A CS Exec exec /usr/local/bin/toggle_display DP1
+Key F3 A CS Exec exec /usr/local/bin/toggle_display DP2-1
+Key F4 A CS Exec exec /usr/local/bin/toggle_display DP2-2
+#Key p A CS Exec exec cat /etc/passwd
+
+# keys for the microsoft keyboard volume control
+Key	XF86AudioMute 			 A	A Exec exec $[fvwm_script]/audio_control mute
+Key	XF86AudioLowerVolume A	A Exec exec	$[fvwm_script]/audio_control down
+Key	XF86AudioRaiseVolume A	A Exec exec	$[fvwm_script]/audio_control up
+Key	XF86AudioRaiseVolume A	A Exec exec	$[fvwm_script]/audio_control playPause
 
 
 # set up ssh session to devserver over Master Session (hopefully it exists)

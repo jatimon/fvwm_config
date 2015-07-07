@@ -1,100 +1,100 @@
-*FvwmPager: SolidSeparators
-*FvwmPager: SmallFont -*-times-medium-r-*-*-*-80-*-*-*-*-*-*
-*FvwmPager: NoStartIconic
-*FvwmPager: Colorset * 8
-*FvwmPager: ActiveColorset * 6
-*FvwmPager: Geometry +519+1022
 Module FvwmPager
-CleanupColorsets
-Colorset 6 fg midnightblue , bg  rgb:05/46/a0, hi  white, fgsh white, RootTransparent buffer, Tint rgb: 05/46/a0 35
-Destroy
-DestroyModuleConfig FvwmPager: *
-*FvwmPager: DeskTopScale 40
-#PagerBackColor         #5c54c0
-#! PagerForeColor               #f0ecb6 [deleted]
-#*FvwmPager: Back VGradient 100 black white
-*FvwmPager: Back DarkGrey
-*FvwmPager: Fore Black
-#*FvwmPager: Fore DarkGrey4
-*FvwmPager: Font none
-*FvwmPager: Hilight SlateBlue4
-*FvwmPager: Balloons
-*FvwmPager: BalloonColorset * 9
-*FvwmPager: SolidSeparators
-*FvwmPager: SmallFont -*-times-medium-r-*-*-*-80-*-*-*-*-*-*
-*FvwmPager: NoStartIconic
-*FvwmPager: Colorset * 8
-*FvwmPager: ActiveColorset * 6
-*FvwmPager: Geometry +519+1022
-Module FvwmPager
-Module FvwmPager
-Module FvwmPager
-Read .fvwm/fvwm.keys
-Module FvwmPager
-Module FvwmRearrange -tile -animate
-Module FvwmRearrange -tile -h -a
-Module FvwmRearrange -tile -a -v
-Module FvwmRearrange -tile -a -v
-Module FvwmPager
-DestroyModuleConfig FvwmPager: *
-*FvwmPager: DeskTopScale 40
-#PagerBackColor         #5c54c0
-#! PagerForeColor               #f0ecb6 [deleted]
-#*FvwmPager: Back VGradient 100 black white
-*FvwmPager: Back DarkGrey
-*FvwmPager: Fore Black
-#*FvwmPager: Fore DarkGrey4
-*FvwmPager: Font none
-*FvwmPager: Hilight SlateBlue4
-*FvwmPager: Balloons
-*FvwmPager: BalloonColorset * 9
-*FvwmPager: SolidSeparators
-*FvwmPager: SmallFont -*-times-medium-r-*-*-*-80-*-*-*-*-*-*
-*FvwmPager: NoStartIconic
-*FvwmPager: Colorset * 8
-*FvwmPager: ActiveColorset * 6
-*FvwmPager: Geometry +250-2
-Destroy
-Module FvwmPager
-Destroy
-DestroyModuleConfig FvwmPager: *
-*FvwmPager: DeskTopScale 40
-#PagerBackColor         #5c54c0
-#! PagerForeColor               #f0ecb6 [deleted]
-#*FvwmPager: Back VGradient 100 black white
-*FvwmPager: Back DarkGrey
-*FvwmPager: Fore Black
-#*FvwmPager: Fore DarkGrey4
-*FvwmPager: Font none
-*FvwmPager: Hilight SlateBlue4
-*FvwmPager: Balloons
-*FvwmPager: BalloonColorset * 9
-*FvwmPager: SolidSeparators
-*FvwmPager: SmallFont -*-times-medium-r-*-*-*-80-*-*-*-*-*-*
-*FvwmPager: NoStartIconic
-*FvwmPager: Colorset * 8
-*FvwmPager: ActiveColorset * 6
-*FvwmPager: Geometry 200x30+250-1
-Module FvwmPager
-Destroy
-DestroyModuleConfig FvwmPager: *
-*FvwmPager: DeskTopScale 40
-#PagerBackColor         #5c54c0
-#! PagerForeColor               #f0ecb6 [deleted]
-#*FvwmPager: Back VGradient 100 black white
-*FvwmPager: Back DarkGrey
-*FvwmPager: Fore Black
-#*FvwmPager: Fore DarkGrey4
-*FvwmPager: Font none
-*FvwmPager: Hilight SlateBlue4
-*FvwmPager: Balloons
-*FvwmPager: BalloonColorset * 9
-*FvwmPager: SolidSeparators
-*FvwmPager: SmallFont -*-times-medium-r-*-*-*-80-*-*-*-*-*-*
-*FvwmPager: NoStartIconic
-*FvwmPager: Colorset * 8
-*FvwmPager: ActiveColorset * 6
-*FvwmPager: Geometry 400x29+250-1
-~                                                                                            
-Module FvwmPager
-Module FvwmPager
+read .fvwm/fvwm.pager
+FvwmPager
+Style "hexchat"         StartsOnPage 0 4, SkipMapping
+DestroyFunc window_rearrange
+AddToFunc "window_rearrange" "C" Module FvwmRearrange -tile -mn 2 0 0 100 -35p
++               "D" Module FvwmRearrange -tile  -h -mn 2
++               "M" Module FvwmRearrange -cascade -incx 2 -incy 2
++               "H" Module FvwmRearrange -tile -v
+DestroyFunc xtme
+AddToFunc xtme I Iconofy Off
++ I Exec exec xterm -sb -si -sk -s -j -aw -sl 1500000
++ I Focus
++ I Raise
++ I WarpToWindow 50 50
+Key  t           A       C       Function xtme
+DestroyFunc xtme
+AddToFunc xtme I Iconify Off
++ I Exec exec xterm -sb -si -sk -s -j -aw -sl 1500000
++ I Focus
++ I Raise
++ I WarpToWindow 50 50
+Key r   A       C       Function xtme
+DestroyFunc xtme
+AddToFunc xtme
++ "I" Iconify Off
++ "I" Exec exec xterm -sb -si -sk -s -j -aw -sl 1500000
++ "I" Focus
++ "I" Raise
++ "I" WarpToWindow 50 50
++ "I" Exec echo Nop
+DestroyFunc xtme
+AddToFunc xtme
++ "I" Iconify Off
++ "I" Exec exec xterm -sb -si -sk -s -j -aw -sl 1500000
++ "I" Focus
++ "I" Raise
++ "I" WarpToWindow 50 50
+estroyFunc xtme
+AddToFunc xtme
++ "I" Exec exec xterm -sb -si -sk -s -j -aw -sl 1500000
++ "I" Focus
++ "I" Raise
++ "I" WarpToWindow 50 50
+DestroyFunc xtme
+AddToFunc xtme
++ "I" Exec exec xterm -sb -si -sk -s -j -aw -sl 1500000
++ "I" Focus
++ "I" Raise
++ "I" WarpToWindow 50 50
+Read fvwm.buttons
+Read .fvwm/Read fvwm.buttons
+Read .fvwm/fvwm.buttons
+Module FvwmButtons
+Style "*exchat"         StartsOnPage 0 4, SkipMapping
+DestroyStyle "*hat*"
+Style "*hat*" StartsOnPage 0 4, SkipMapping
+Key 1 A M GotoDesk 0
+Key 1 A C GotoDesk 1
+Key 1 A C GotoScreen 1
+Key 1 A C GotoPage 1
+Key 1 A C GotoPage 0 1
+Key 1 A C GotoPage 0 4
+Key 1 A C GotoPage 4 0
+Key 1 A C GotoPage 8 0
+DestroyFunc window_rearrange
+AddToFunc "window_rearrange" "C" Module FvwmRearrange -tile -mn 2 -ewhiwa 1p 1p -1p -1p
++               "D" Module FvwmRearrange -tile  -h -mn 2
++               "M" Module FvwmRearrange -cascade -incx 2 -incy 2
++               "H" Module FvwmRearrange -tile -v
+DestroyFunc window_rearrange
+AddToFunc "window_rearrange" "C" Module FvwmRearrange -tile -mn 2 -ewhiwa 1p 1p 99 99
++               "D" Module FvwmRearrange -tile  -h -mn 2
++               "M" Module FvwmRearrange -cascade -incx 2 -incy 2
++               "H" Module FvwmRearrange -tile -v
+DestroyFunc window_rearrange
+AddToFunc "window_rearrange" "C" Module FvwmRearrange -tile -mn 2 -ewhiwa 1p 1p 99 98
++               "D" Module FvwmRearrange -tile  -h -mn 2
++               "M" Module FvwmRearrange -cascade -incx 2 -incy 2
++               "H" Module FvwmRearrange -tile -v
+DestroyFunc window_rearrange
+AddToFunc "window_rearrange" "C" Module FvwmRearrange -tile -mn 2 -ewhiwa 1p 1p 98 99
++               "D" Module FvwmRearrange -tile  -h -mn 2
++               "M" Module FvwmRearrange -cascade -incx 2 -incy 2
++               "H" Module FvwmRearrange -tile -v
+DestroyFunc window_rearrange
+AddToFunc "window_rearrange" "C" Module FvwmRearrange -tile -mn 2 -ewhiwa #1p 1p 99 99
++               "D" Module FvwmRearrange -tile  -h -mn 2
++               "M" Module FvwmRearrange -cascade -incx 2 -incy 2
++               "H" Module FvwmRearrange -tile -v
+DestroyFunc window_rearrange
+AddToFunc "window_rearrange" "C" Module FvwmRearrange -tile -mn 2 -ewhiwa 1p 2p 
++               "D" Module FvwmRearrange -tile  -h -mn 2
++               "M" Module FvwmRearrange -cascade -incx 2 -incy 2
++               "H" Module FvwmRearrange -tile -v
+DestroyFunc window_rearrange
+AddToFunc "window_rearrange" "C" Module FvwmRearrange -tile -mn 2 
++               "D" Module FvwmRearrange -tile  -h -mn 2
++               "M" Module FvwmRearrange -cascade -incx 2 -incy 2
++               "H" Module FvwmRearrange -tile -v
