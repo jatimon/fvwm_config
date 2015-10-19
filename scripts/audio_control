@@ -4,10 +4,10 @@ echo $1
 
 case $1 in
     'up')
-			cmd="amixer -D pulse sset Master 2%+"
+			cmd="amixer -D pulse sset Master 5%+"
     ;;
     'down')
-			cmd="amixer -D pulse sset Master 2%-"
+			cmd="amixer -D pulse sset Master 5%-"
     ;;
 		'mute')
 			MUTED=`amixer -D pulse sget Master | grep -c off`
@@ -19,14 +19,27 @@ case $1 in
 			fi
 		;;
 		'playPause')
+				cmd='dbus-send --print-reply --dest=net.kevinmehall.Pithos /net/kevinmehall/Pithos net.kevinmehall.Pithos.PlayPause'
+		;;
+		'Love')
+				cmd='dbus-send --print-reply --dest=net.kevinmehall.Pithos /net/kevinmehall/Pithos net.kevinmehall.Pithos.LoveCurrentSong'
+		;;
+		'Ban')
+				cmd='dbus-send --print-reply --dest=net.kevinmehall.Pithos /net/kevinmehall/Pithos net.kevinmehall.Pithos.BanCurrentSong'
+		;;
+		'Skip')
+				cmd='dbus-send --print-reply --dest=net.kevinmehall.Pithos /net/kevinmehall/Pithos net.kevinmehall.Pithos.SkipSong'
+		;;
+		'startPlayer')
 			# is the player running
 			pidof -x pithos >/dev/null 2>&1
 			if [ $? != 0 ];
 			then
 				pithos &
 			else
-				cmd='dbus-send --print-reply --dest=net.kevinmehall.Pithos /net/kevinmehall/Pithos net.kevinmehall.Pithos.PlayPause'
+				pkill -f pithos
 			fi
+		;;
 esac
 
 exec $cmd 2>&1 > /dev/null

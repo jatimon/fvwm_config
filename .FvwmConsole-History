@@ -1,28 +1,3 @@
-Module FvwmPager
-read .fvwm/fvwm.pager
-FvwmPager
-Style "hexchat"         StartsOnPage 0 4, SkipMapping
-DestroyFunc window_rearrange
-AddToFunc "window_rearrange" "C" Module FvwmRearrange -tile -mn 2 0 0 100 -35p
-+               "D" Module FvwmRearrange -tile  -h -mn 2
-+               "M" Module FvwmRearrange -cascade -incx 2 -incy 2
-+               "H" Module FvwmRearrange -tile -v
-DestroyFunc xtme
-AddToFunc xtme I Iconofy Off
-+ I Exec exec xterm -sb -si -sk -s -j -aw -sl 1500000
-+ I Focus
-+ I Raise
-+ I WarpToWindow 50 50
-Key  t           A       C       Function xtme
-DestroyFunc xtme
-AddToFunc xtme I Iconify Off
-+ I Exec exec xterm -sb -si -sk -s -j -aw -sl 1500000
-+ I Focus
-+ I Raise
-+ I WarpToWindow 50 50
-Key r   A       C       Function xtme
-DestroyFunc xtme
-AddToFunc xtme
 + "I" Iconify Off
 + "I" Exec exec xterm -sb -si -sk -s -j -aw -sl 1500000
 + "I" Focus
@@ -98,3 +73,28 @@ AddToFunc "window_rearrange" "C" Module FvwmRearrange -tile -mn 2
 +               "D" Module FvwmRearrange -tile  -h -mn 2
 +               "M" Module FvwmRearrange -cascade -incx 2 -incy 2
 +               "H" Module FvwmRearrange -tile -v
+Key +        A  CM Exec exec  $[fvwm_script]/audio_control Love
+Key _        A  CM Exec exec  $[fvwm_script]/audio_control Skip
+Key x        A  CM Exec exec  $[fvwm_script]/audio_control Ban
+Key +        A  CM Exec exec  $[fvwm_script]/audio_control Love
+Key _        A  CM Exec exec  $[fvwm_script]/audio_control Skip
+Key x        A  CM Exec exec  $[fvwm_script]/audio_control Ban
+Key +        A  CM Exec exec  $[fvwm_script]/audio_control Love
+Key plus         A  CM Exec exec  $[fvwm_script]/audio_control Love
+Key underscore         A  CM Exec exec  $[fvwm_script]/audio_control Skip
+Key x        A  CM Exec exec  $[fvwm_script]/audio_control Ban
+Key +        A  CS Exec exec  $[fvwm_script]/audio_control Love
+Key plus         A  CS Exec exec  $[fvwm_script]/audio_control Love
+Key plus         A  CM Exec exec  $[fvwm_script]/audio_control Love
+Key underscore         A  CA  Exec exec  $[fvwm_script]/audio_control Skip
+Key underscore           A  CM1 Exec exec $[fvwm_script]/audio_control Skip
+Key underscore           A  CS Exec exec $[fvwm_script]/audio_control Skip
+Key underscore           A  CM Exec exec  $[fvwm_script]/audio_control Skip
+Key underscore           A  CM2 Exec exec  $[fvwm_script]/audio_control Skip
+Key underscore           A  CM1 Exec exec  $[fvwm_script]/audio_control Skip
+Key F1 A AM Exec xterm
+Key F9 A M Exec xterm
+Key underscore	A M Exec exec  $[fvwm_script]/audio_control Skip
+Key underscore	A SM Exec exec  $[fvwm_script]/audio_control Skip
+Key underscore	A CM Exec exec  $[fvwm_script]/audio_control Skip
+Key underscore	A MC Exec exec  $[fvwm_script]/audio_control Skip

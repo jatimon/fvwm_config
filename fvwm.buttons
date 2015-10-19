@@ -38,7 +38,9 @@ DestroyModuleConfig FvwmButtons: *
 #*FvwmButtons: (1x1, Icon crystalsvg/22x22/apps/knotes.png\
         Action(Mouse 1) Exec "" /usr/local/bin/postit.pl)\
         Action(Mouse 2) Exec "" xlock -mode random)
-*FvwmButtons: (1x1, Icon gnome/22x22/apps/web-browser.png,  Action(Mouse 1)  Exec ""  /usr/bin/firefox , Action(Mouse 2)  Exec ""  /usr/bin/google-chrome )
+*FvwmButtons: (1x1, Icon gnome/22x22/apps/web-browser.png,  \
+    Action(Mouse 1)  Exec ""  /usr/bin/google-chrome,\
+    Action(Mouse 2)  Exec ""  /usr/bin/firefox )
 *FvwmButtons: (1x1, Icon /usr/share/icons/hicolor/22x22/apps/evolution-mail.png\
         Action(Mouse 1) Exec "" /usr/bin/thunderbird)
 #*FvwmButtons: (1x1, Icon slick/22x22/filesystems/server.png,, TipsLabel "Left -- tom03, Middle -- Imaging, Right -- jump1001" \

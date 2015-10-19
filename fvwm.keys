@@ -81,18 +81,24 @@ Key t 					A 			C 			Exec exec /usr/bin/mate-terminal --title "Xterm"
 key (Google-chrome) t A C --
 #Key t A CS Exec exec xterm -sb -si -sk -sl 1500000 -cr HotPink -s -j -aw  -title 'Xterm Sandbox' -e '/usr/bin/ssh -X sb'
 Key t A CS Exec exec /usr/bin/mate-terminal --profile=devserver --title 'Xterm Sandbox' -e '/usr/bin/ssh -X sb'
-Key h A CS Exec exec /usr/bin/mate-terminal --profile=devserver --title 'Xterm Sandbox (MOSH)' -e '/usr/bin/mosh sb'
+Key h A CS Exec exec /usr/bin/mate-terminal --profile=devserver --title 'Xterm Sandbox (MOSH)' -e '/usr/bin/mosh -6 sb'
 Key F1 A CS Exec exec /usr/local/bin/toggle_display eDP1
-Key F2 A CS Exec exec /usr/local/bin/toggle_display DP1
-Key F3 A CS Exec exec /usr/local/bin/toggle_display DP2-1
-Key F4 A CS Exec exec /usr/local/bin/toggle_display DP2-2
+Key XF86Launch5 A A Exec exec /usr/local/bin/toggle_display eDP1
+Key XF86Launch6 A A Exec exec /usr/local/bin/toggle_display DP1
+Key XF86Launch7 A A Exec exec /usr/local/bin/toggle_display DP2-1
+Key XF86Launch8 A A Exec exec /usr/local/bin/toggle_display DP2-2
+Key XF86Launch9 A A Exec exec /usr/local/bin/toggle_display DP2
 #Key p A CS Exec exec cat /etc/passwd
 
 # keys for the microsoft keyboard volume control
 Key	XF86AudioMute 			 A	A Exec exec $[fvwm_script]/audio_control mute
 Key	XF86AudioLowerVolume A	A Exec exec	$[fvwm_script]/audio_control down
 Key	XF86AudioRaiseVolume A	A Exec exec	$[fvwm_script]/audio_control up
-Key	XF86AudioRaiseVolume A	A Exec exec	$[fvwm_script]/audio_control playPause
+Key	XF86AudioPlay				 A	A Exec exec	$[fvwm_script]/audio_control playPause
+Key	XF86Favorites				 A	A Exec exec	$[fvwm_script]/audio_control startPlayer
+Key	plus				 				 A	SM Exec exec	$[fvwm_script]/audio_control Love
+Key	underscore				 	 A	SM Exec exec	$[fvwm_script]/audio_control Skip
+Key	x				 						 A	SM Exec exec	$[fvwm_script]/audio_control Ban
 
 
 # set up ssh session to devserver over Master Session (hopefully it exists)

@@ -43,7 +43,7 @@ AddToFunc "InitFunction" "I" Module FvwmButtons
 # I have removed Buttons in places of mate-panel
 AddToFunc "RestartFunction" "I" Module FvwmButtons
 #+              "I" Exec exec /home/jtimon/.fvwm/rnd_pic.py
-+              "I" Module FvwmConsole
+#+              "I" Module FvwmConsole
 +              "I" Function MakeBackgroundMenu
 +              "I" Exec exec /home/jtimon/.fvwm/scripts/applets
 
