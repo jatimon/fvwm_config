@@ -69,8 +69,8 @@ AddToFunc "Move-or-Raise" "M" Move
 # maximization if you just hold the mouse button down.
 DestroyFunc maximize_func
 AddToFunc "maximize_func" "M" Maximize 0 100
-+              "C" Maximize 0 100
-+              "D" Maximize 100 100
++              "C" Maximize 100 100
++              "D" Maximize 0 100
 
 
 # This one moves and then lowers the window if you drag the mouse,
