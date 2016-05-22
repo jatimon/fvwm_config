@@ -1,55 +1,3 @@
-+ "I" Iconify Off
-+ "I" Exec exec xterm -sb -si -sk -s -j -aw -sl 1500000
-+ "I" Focus
-+ "I" Raise
-+ "I" WarpToWindow 50 50
-+ "I" Exec echo Nop
-DestroyFunc xtme
-AddToFunc xtme
-+ "I" Iconify Off
-+ "I" Exec exec xterm -sb -si -sk -s -j -aw -sl 1500000
-+ "I" Focus
-+ "I" Raise
-+ "I" WarpToWindow 50 50
-estroyFunc xtme
-AddToFunc xtme
-+ "I" Exec exec xterm -sb -si -sk -s -j -aw -sl 1500000
-+ "I" Focus
-+ "I" Raise
-+ "I" WarpToWindow 50 50
-DestroyFunc xtme
-AddToFunc xtme
-+ "I" Exec exec xterm -sb -si -sk -s -j -aw -sl 1500000
-+ "I" Focus
-+ "I" Raise
-+ "I" WarpToWindow 50 50
-Read fvwm.buttons
-Read .fvwm/Read fvwm.buttons
-Read .fvwm/fvwm.buttons
-Module FvwmButtons
-Style "*exchat"         StartsOnPage 0 4, SkipMapping
-DestroyStyle "*hat*"
-Style "*hat*" StartsOnPage 0 4, SkipMapping
-Key 1 A M GotoDesk 0
-Key 1 A C GotoDesk 1
-Key 1 A C GotoScreen 1
-Key 1 A C GotoPage 1
-Key 1 A C GotoPage 0 1
-Key 1 A C GotoPage 0 4
-Key 1 A C GotoPage 4 0
-Key 1 A C GotoPage 8 0
-DestroyFunc window_rearrange
-AddToFunc "window_rearrange" "C" Module FvwmRearrange -tile -mn 2 -ewhiwa 1p 1p -1p -1p
-+               "D" Module FvwmRearrange -tile  -h -mn 2
-+               "M" Module FvwmRearrange -cascade -incx 2 -incy 2
-+               "H" Module FvwmRearrange -tile -v
-DestroyFunc window_rearrange
-AddToFunc "window_rearrange" "C" Module FvwmRearrange -tile -mn 2 -ewhiwa 1p 1p 99 99
-+               "D" Module FvwmRearrange -tile  -h -mn 2
-+               "M" Module FvwmRearrange -cascade -incx 2 -incy 2
-+               "H" Module FvwmRearrange -tile -v
-DestroyFunc window_rearrange
-AddToFunc "window_rearrange" "C" Module FvwmRearrange -tile -mn 2 -ewhiwa 1p 1p 99 98
 +               "D" Module FvwmRearrange -tile  -h -mn 2
 +               "M" Module FvwmRearrange -cascade -incx 2 -incy 2
 +               "H" Module FvwmRearrange -tile -v
@@ -98,3 +46,55 @@ Key underscore	A M Exec exec  $[fvwm_script]/audio_control Skip
 Key underscore	A SM Exec exec  $[fvwm_script]/audio_control Skip
 Key underscore	A CM Exec exec  $[fvwm_script]/audio_control Skip
 Key underscore	A MC Exec exec  $[fvwm_script]/audio_control Skip
+read ~/.fvwm/WallpaperMenu
+read /home/jtimon/.fvwm/WallpaperMenu
+read /home/jtimon/.fvwm/WallpaperMenu
+DestroyFunc MakeBackgroundMenu      
+AddToFunc MakeBackgroundMenu
++ "I" DestroyMenu BackgroundMenu  
++ "I" AddToMenu BackgroundMenu BackgroundMenu Title  
++ "I" Exec '$[fvwm_script]/background_builder.py' 
++ "I" Read /home/jtimon/.fvwm/WallpaperMenu 
+Function MakeBackgroundMenu
+Function MakeBackgroundMenu
+Function MakeBackgroundMenu
+MakeBackgroundMenu
+MakeBackgroundMenu
+DestroyFunc MakeBackgroundMenu    
+AddToFunc MakeBackgroundMenu    
+DestroyMenu BackgroundMenu     
+DestroyFunc MakeBackgroundMenu                                                                                                                      
+AddToFunc MakeBackgroundMenu                                                     
+ + "I" DestroyMenu BackgroundMenu                                                
+ + "I" AddToMenu BackgroundMenu BackgroundMenu Title                             
++ "I" Read /home/jtimon/.fvwm/WallpaperMenu            
+Read /home/jtimon/.fvwm/WallpaperMenu         
+Style "xterm" BorderWidth 10
+Style "xterm" BorderWidth 1
+Style "mate-terminal" BorderWidth 1
+Style "mate-terminal" BorderWidth 2
+Style "mate-terminal" BorderColorSet 1
+Style "mate-terminal" BorderWidth 10
+Style "mate-terminal" BorderColorSet 2
+Style "mate-terminal" BorderColorSet 3
+Style "mate-terminal" BorderColorSet 4
+Style "mate-terminal" BorderColorSet 5
+Style "mate-terminal" BorderColorSet 6
+Style "mate-terminal" BorderColorSet 8
+Colorset 7 fg Yellow
+Style "mate-terminal" BorderColorSet 7
+Colorset 7 hi Yellow
+Colorset 7 fgsh Yellow
+Colorset 7 bg Yellow
+Style "mate-terminal" BorderWidth 2
+Style "mate-terminal" BorderWidth 3
+Colorset 7 bg Yellow, hi LightBlue
+Colorset 7 hi Yellow, bg LightBlue
+Style "mate-terminal" BorderWidth 1
+Style "mate-terminal" BorderWidth 2
+Style "mate-terminal" BorderWidth 4
+Style "mate-terminal" BorderWidth 2
+Colorset 7 fg Yellow, Translucent White 65 , hi Average
+Style "mate-terminal" BorderWidth 3
+Colorset 7 hi Yellow, bg LightBlue 
+Function RestartFunction

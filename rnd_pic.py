@@ -3,7 +3,6 @@
 from os import walk, system
 import magic
 import random
-import argparse
 import subprocess 
 
 def random_pic(pictures, ms):
@@ -16,7 +15,11 @@ def random_pic(pictures, ms):
 
 def first_run():
     cmd = "/bin/pidof fvwm2"
-    pid =  subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE).stdout.read().strip()
+    pid =  subprocess.Popen(
+        cmd, 
+        shell=True, 
+        stdout=subprocess.PIPE
+    ).stdout.read().strip()
     print "pid -> " ,pid
     with file('/home/jtimon/.fvwm/my_pid') as f:
         my_pid = f.read().strip()
@@ -33,14 +36,19 @@ def first_run():
 
 def main():
     mypath="/usr/share/backgrounds"
-    a=[]
-    for (dirpath, dirnames, files) in walk(mypath):
-        a += [dirpath + "/" + file for file in files ]
-
     mymagic = magic.open(magic.MAGIC_MIME_TYPE)
     mymagic.load()
+    a=[]
+    for (dirpath, dirnames, files) in walk(mypath):
+        for filename in files:
+            pic = '/'.join([dirpath, filename])
+            print(pic)
+            if 'image' in mymagic.file(pic):
+                a.append(pic)
 
-    system("/usr/bin/Esetroot -scale " +  random_pic(pictures=a, ms=mymagic) )
+    cmd = "/usr/bin/Esetroot -scale {}".format(random.choice(a))
+    print(a)
+    system(cmd)
 
 if __name__=="__main__":
     main()

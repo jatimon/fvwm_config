@@ -40,5 +40,6 @@ Style HexChat         StartsOnPage 8 0, SkipMapping
 #Style "xterm"           
 #Style "console"         Icon xterm.xpm, Color white/blue
 #Style "xload"           Sticky, WindowListSkip, NoTitle
+Style "mate-terminal" BorderWidth 3
 
 
