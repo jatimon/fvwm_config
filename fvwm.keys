@@ -83,6 +83,7 @@ key (Google-chrome) t A C --
 Key t A CS Exec exec /usr/bin/mate-terminal --profile=devserver --title 'Xterm Sandbox' -e '/usr/bin/ssh -X sb'
 Key h A CS Exec exec /usr/bin/mate-terminal --profile=devserver --title 'Xterm Sandbox (MOSH)' -e '/usr/bin/mosh -6 sb'
 Key F1 A CS Exec exec /usr/local/bin/toggle_display eDP1
+Key XF86HomePage A A Restart /usr/bin/fvwm2
 Key XF86Launch5 A A Exec exec /usr/local/bin/toggle_display eDP1
 Key XF86Launch6 A A Exec exec /usr/local/bin/toggle_display DP1
 Key XF86Launch7 A A Exec exec /usr/local/bin/toggle_display DP2-1

@@ -40,8 +40,9 @@ Colorset 5  fg MidnightBlue, bg white, hi rgb:05/46/a0, fgsh rgb:05/46/a0,  Shap
 Colorset 6 fg midnightblue , bg  rgb:05/46/a0, hi  white, fgsh white, RootTransparent buffer, Tint rgb:05/46/a0 35
 
 
-# Calculator  (don't recall why i have this)
-#Colorset 7 fg Yellow, Translucent White 65 , hi Average
+# mate-terminal border color
+Colorset 7 hi Yellow, bg LightBlue
+# Colorset 7 fg Yellow, Translucent White 65 , hi Average
 
 # Pager 
 Colorset 8 fg Yellow, Translucent White 65
