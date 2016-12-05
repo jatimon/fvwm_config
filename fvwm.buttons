@@ -41,8 +41,8 @@ DestroyModuleConfig FvwmButtons: *
 *FvwmButtons: (1x1, Icon gnome/22x22/apps/web-browser.png,  \
     Action(Mouse 1)  Exec ""  /usr/bin/google-chrome,\
     Action(Mouse 2)  Exec ""  /usr/bin/firefox )
-*FvwmButtons: (1x1, Icon /usr/share/icons/hicolor/22x22/apps/evolution-mail.png\
-        Action(Mouse 1) Exec "" /usr/bin/thunderbird)
+*FvwmButtons: (1x1, Icon ./icons/oxygen/22x22/apps/kmail.png\
+        Action(Mouse 1) Exec "" /usr/bin/icedove)
 #*FvwmButtons: (1x1, Icon slick/22x22/filesystems/server.png,, TipsLabel "Left -- tom03, Middle -- Imaging, Right -- jump1001" \
         #Action(Mouse 1) "exec xterm -ls -s -sl 15000 -j -aw -sb -bg black -fg white -cr HotPink -title 'tom03' -e /usr/bin/ssh -X -l jtimon tom03 ",\
         #Action(Mouse 2) "exec xterm -ls -s -sl 15000 -j -aw -sb -bg black -fg yellow -cr HotPink -title 'Imaging' -e /usr/bin/ssh -X -l jtimon pxe03.rim.net",\

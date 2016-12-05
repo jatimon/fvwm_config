@@ -78,10 +78,10 @@ Key F10          A       A       Popup "Window Ops"
 #Key t 					A 			C 			Exec exec xterm -sb -si -sk -s -j -aw -sl 1500000 # ctrl-t in any context will open xterm
 Key t 					A 			C 			Exec exec /usr/bin/mate-terminal --title "Xterm"
 #Key t 					A 			C 			Function xtme
-key (Google-chrome) t A C --
-#Key t A CS Exec exec xterm -sb -si -sk -sl 1500000 -cr HotPink -s -j -aw  -title 'Xterm Sandbox' -e '/usr/bin/ssh -X sb'
-Key t A CS Exec exec /usr/bin/mate-terminal --profile=devserver --title 'Xterm Sandbox' -e '/usr/bin/ssh -X sb'
-Key h A CS Exec exec /usr/bin/mate-terminal --profile=devserver --title 'Xterm Sandbox (MOSH)' -e '/usr/bin/mosh -6 sb'
+Key (google-chrome) t A C --
+#Key t A CS Exec exec xterm -sb -si -sk -sl 1500000 -cr HotPink -s -j -aw  -title 'Xterm Sandbox' -e '/usr/bin/ssh -X sb2'
+Key t A CS Exec exec /usr/bin/mate-terminal --profile=devserver --title 'Xterm Sandbox' -e '/usr/bin/ssh -X sb2'
+Key h A CS Exec exec /usr/bin/mate-terminal --profile=devserver --title 'Xterm Sandbox (MOSH)' -e '/usr/local/bin/mosh -6 sb2'
 Key F1 A CS Exec exec /usr/local/bin/toggle_display eDP1
 Key XF86HomePage A A Restart /usr/bin/fvwm2
 Key XF86Launch5 A A Exec exec /usr/local/bin/toggle_display eDP1

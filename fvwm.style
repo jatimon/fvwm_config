@@ -34,7 +34,7 @@ Style "google-chrome"         Title, !Sticky
 Style "*esktop"         NoTitle, !Sticky, BorderWidth 1, HandleWidth 3 
 Style "FvwmBanner"      StaysOnTop
 Style "xcalc"           Icon xcalc.xpm, Colorset 7
-Style HexChat         StartsOnPage 8 0, SkipMapping
+Style HexChat         StartsOnPage 3 0, SkipMapping
 #Style "xlock"           NoTitle, NoHandles, Sticky, WindowListSkip
 #Style "xclock"          NoTitle, NoHandles, BorderWidth 0, Font 5x7
 #Style "xterm"           

@@ -46,6 +46,7 @@ def main():
             if 'image' in mymagic.file(pic):
                 a.append(pic)
 
+    print(a)
     cmd = "/usr/bin/Esetroot -scale {}".format(random.choice(a))
     print(a)
     system(cmd)
